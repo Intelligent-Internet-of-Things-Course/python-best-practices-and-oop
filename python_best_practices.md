@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-# Lecture 1b - Python Best Practices
+# Python Best Practices
 
 <!-- omit in toc -->
 ## Lecture Information
@@ -15,55 +15,55 @@
 <!-- omit in toc -->
 # Table of Contents
 
-- [1b.1 Introduction](#1b1-introduction)
-- [1b.2 Understanding `if __name__ == "__main__":`](#1b2-understanding-if-__name__--__main__)
-  - [1b.2.1 What `__name__` Is, and What the Guard Does](#1b21-what-__name__-is-and-what-the-guard-does)
-  - [1b.2.2 Why the Guard Matters: the Problem It Prevents](#1b22-why-the-guard-matters-the-problem-it-prevents)
-  - [1b.2.3 Best Practices](#1b23-best-practices)
-- [1b.3 Exception Handling in Python](#1b3-exception-handling-in-python)
-  - [1b.3.1 try / except](#1b31-try--except)
-  - [1b.3.2 else & finally](#1b32-else--finally)
-  - [1b.3.3 Custom Exceptions](#1b33-custom-exceptions)
-- [1b.4 Python Data Types & Type Hints](#1b4-python-data-types--type-hints)
-  - [1b.4.1 The Cost of Dynamic Typing: Errors a Compiler Would Catch](#1b41-the-cost-of-dynamic-typing-errors-a-compiler-would-catch)
-  - [1b.4.2 Writing Robust Code Without Type Hints](#1b42-writing-robust-code-without-type-hints)
-  - [1b.4.3 Checking Types at Runtime with `isinstance()`](#1b43-checking-types-at-runtime-with-isinstance)
-  - [1b.4.4 A Quick Tour of Python's Built-in Data Types](#1b44-a-quick-tour-of-pythons-built-in-data-types)
-  - [1b.4.5 Type Hints: Syntax and Purpose](#1b45-type-hints-syntax-and-purpose)
-  - [1b.4.6 Let's See How It Works](#1b46-lets-see-how-it-works)
-  - [1b.4.7 A Complete Example: Type Hints and `isinstance()` Together](#1b47-a-complete-example-type-hints-and-isinstance-together)
-- [1b.5 Stop Hardcoding Things: Managing Parameters and Configurations](#1b5-stop-hardcoding-things-managing-parameters-and-configurations)
-  - [1b.5.1 The Problem with Hardcoded Values](#1b51-the-problem-with-hardcoded-values)
-  - [1b.5.2 Command-Line Arguments](#1b52-command-line-arguments)
-  - [1b.5.3 Environment Variables](#1b53-environment-variables)
-  - [1b.5.4 Configuration Files: YAML and JSON](#1b54-configuration-files-yaml-and-json)
-- [1b.6 Logging](#1b6-logging)
-  - [1b.6.1 Why Not Just `print()`?](#1b61-why-not-just-print)
-  - [1b.6.2 The `logging` Module Basics](#1b62-the-logging-module-basics)
-  - [1b.6.3 Logging to a File](#1b63-logging-to-a-file)
-- [1b.7 Managing Dependencies](#1b7-managing-dependencies)
-  - [1b.7.1 `requirements.txt`](#1b71-requirementstxt)
-  - [1b.7.2 `pyproject.toml`](#1b72-pyprojecttoml)
-- [1b.8 Virtual Environments](#1b8-virtual-environments)
-  - [1b.8.1 What Is a Virtual Environment, and Why It Matters](#1b81-what-is-a-virtual-environment-and-why-it-matters)
-  - [1b.8.2 Creating and Using a Virtual Environment with `venv`](#1b82-creating-and-using-a-virtual-environment-with-venv)
-  - [1b.8.3 Virtual Environments and Dependency Management, Together](#1b83-virtual-environments-and-dependency-management-together)
-- [1b.9 Python Project Layout](#1b9-python-project-layout)
-- [1b.10 Python Modules & Packages](#1b10-python-modules--packages)
-  - [1b.10.1 Modules and `import`](#1b101-modules-and-import)
-  - [1b.10.2 Packages and `__init__.py`](#1b102-packages-and-__init__py)
-  - [1b.10.3 Absolute vs. Relative Imports](#1b103-absolute-vs-relative-imports)
-- [1b.11 Faster Project & Dependency Management with `uv`](#1b11-faster-project--dependency-management-with-uv)
-  - [1b.11.1 What Is `uv`?](#1b111-what-is-uv)
-  - [1b.11.2 Initializing a Project with the `src/` Layout Already Covered](#1b112-initializing-a-project-with-the-src-layout-already-covered)
-  - [1b.11.3 Dependencies and the Virtual Environment, Handled Automatically](#1b113-dependencies-and-the-virtual-environment-handled-automatically)
-  - [1b.11.4 Running One or More `main`s from the Command Line](#1b114-running-one-or-more-mains-from-the-command-line)
+- [1 Introduction](#1-introduction)
+- [2 Understanding `if __name__ == "__main__":`](#2-understanding-if-__name__--__main__)
+  - [2.1 What `__name__` Is, and What the Guard Does](#21-what-__name__-is-and-what-the-guard-does)
+  - [2.2 Why the Guard Matters: the Problem It Prevents](#22-why-the-guard-matters-the-problem-it-prevents)
+  - [2.3 Best Practices](#23-best-practices)
+- [3 Exception Handling in Python](#3-exception-handling-in-python)
+  - [3.1 try / except](#31-try--except)
+  - [3.2 else & finally](#32-else--finally)
+  - [3.3 Custom Exceptions](#33-custom-exceptions)
+- [4 Python Data Types & Type Hints](#4-python-data-types--type-hints)
+  - [4.1 The Cost of Dynamic Typing: Errors a Compiler Would Catch](#41-the-cost-of-dynamic-typing-errors-a-compiler-would-catch)
+  - [4.2 Writing Robust Code Without Type Hints](#42-writing-robust-code-without-type-hints)
+  - [4.3 Checking Types at Runtime with `isinstance()`](#43-checking-types-at-runtime-with-isinstance)
+  - [4.4 A Quick Tour of Python's Built-in Data Types](#44-a-quick-tour-of-pythons-built-in-data-types)
+  - [4.5 Type Hints: Syntax and Purpose](#45-type-hints-syntax-and-purpose)
+  - [4.6 Let's See How It Works](#46-lets-see-how-it-works)
+  - [4.7 A Complete Example: Type Hints and `isinstance()` Together](#47-a-complete-example-type-hints-and-isinstance-together)
+- [5 Stop Hardcoding Things: Managing Parameters and Configurations](#5-stop-hardcoding-things-managing-parameters-and-configurations)
+  - [5.1 The Problem with Hardcoded Values](#51-the-problem-with-hardcoded-values)
+  - [5.2 Command-Line Arguments](#52-command-line-arguments)
+  - [5.3 Environment Variables](#53-environment-variables)
+  - [5.4 Configuration Files: YAML and JSON](#54-configuration-files-yaml-and-json)
+- [6 Logging](#6-logging)
+  - [6.1 Why Not Just `print()`?](#61-why-not-just-print)
+  - [6.2 The `logging` Module Basics](#62-the-logging-module-basics)
+  - [6.3 Logging to a File](#63-logging-to-a-file)
+- [7 Managing Dependencies](#7-managing-dependencies)
+  - [7.1 `requirements.txt`](#71-requirementstxt)
+  - [7.2 `pyproject.toml`](#72-pyprojecttoml)
+- [8 Virtual Environments](#8-virtual-environments)
+  - [8.1 What Is a Virtual Environment, and Why It Matters](#81-what-is-a-virtual-environment-and-why-it-matters)
+  - [8.2 Creating and Using a Virtual Environment with `venv`](#82-creating-and-using-a-virtual-environment-with-venv)
+  - [8.3 Virtual Environments and Dependency Management, Together](#83-virtual-environments-and-dependency-management-together)
+- [9 Python Project Layout](#9-python-project-layout)
+- [10 Python Modules & Packages](#10-python-modules--packages)
+  - [10.1 Modules and `import`](#101-modules-and-import)
+  - [10.2 Packages and `__init__.py`](#102-packages-and-__init__py)
+  - [10.3 Absolute vs. Relative Imports](#103-absolute-vs-relative-imports)
+- [11 Faster Project & Dependency Management with `uv`](#11-faster-project--dependency-management-with-uv)
+  - [11.1 What Is `uv`?](#111-what-is-uv)
+  - [11.2 Initializing a Project with the `src/` Layout Already Covered](#112-initializing-a-project-with-the-src-layout-already-covered)
+  - [11.3 Dependencies and the Virtual Environment, Handled Automatically](#113-dependencies-and-the-virtual-environment-handled-automatically)
+  - [11.4 Running One or More `main`s from the Command Line](#114-running-one-or-more-mains-from-the-command-line)
 
-# 1b.1 Introduction
+# 1 Introduction
 
-This lecture sits between **Lecture 1** (Cyber-Physical Systems & IoT introduction) and **Lecture 2** (Python Object-Oriented Programming). Before diving into classes and objects, it is worth pausing on a set of practices that make *any* Python code — object-oriented or not — more robust, readable, and maintainable in a real project.
+Before diving into classes and objects, it is worth pausing on a set of practices that make *any* Python code — object-oriented or not — more robust, readable, and maintainable in a real project.
 
-None of the topics below require OOP to be useful: they apply just as much to a short script as to a large, class-based codebase. But they *do* make the transition into OOP (Lecture 2) smoother, since good habits around typing, configuration, error handling, and project structure are exactly what turns a collection of classes into a maintainable piece of software.
+None of the topics below require OOP to be useful: they apply just as much to a short script as to a large, class-based codebase. But they *do* make the transition into OOP smoother, since good habits around typing, configuration, error handling, and project structure are exactly what turns a collection of classes into a maintainable piece of software.
 
 **What this lecture covers:**
 - What `if __name__ == "__main__":` actually does, and why so much example code in this lecture (and beyond) uses it.
@@ -79,9 +79,9 @@ None of the topics below require OOP to be useful: they apply just as much to a 
 
 ---
 
-# 1b.2 Understanding `if __name__ == "__main__":`
+# 2 Understanding `if __name__ == "__main__":`
 
-## 1b.2.1 What `__name__` Is, and What the Guard Does
+## 2.1 What `__name__` Is, and What the Guard Does
 
 Every Python file, the moment it runs, has access to a built-in variable called `__name__`, set automatically by the interpreter — nothing has to define it. Its value depends entirely on **how the file started running**:
 
@@ -130,7 +130,7 @@ main_app.py just needed the function, nothing else:
 
 Same file, same `def read_temperature():` — but the guarded block only fires when `sensor_utils.py` is the file being run directly. The unguarded `print(...)` right above it, by contrast, runs **every single time** the file is loaded at all, whether run directly or imported — which leads directly to the next section.
 
-## 1b.2.2 Why the Guard Matters: the Problem It Prevents
+## 2.2 Why the Guard Matters: the Problem It Prevents
 
 The first time Python imports a file, it does not just register the functions and classes defined in it — it runs the **entire file, top to bottom**, exactly once. Any code sitting at the top level, outside of a function and outside an `if __name__ == "__main__":` guard, runs as a side effect of that import, whether or not anyone wanted it to.
 
@@ -160,9 +160,9 @@ main_app_bad.py just needed the function, nothing else:
 21.5
 ```
 
-`main_app_bad.py` only wanted `read_temperature()` — but merely *importing* `sensor_utils_bad` was enough to trigger "Starting the sensor loop..." and a reading, before `main_app_bad.py`'s own code even got a chance to run. In a larger project this is exactly the kind of surprising, hard-to-trace behavior this lecture has warned about since Section 1b.4.1: unrelated code executing as a side effect of something that looked like a harmless import.
+`main_app_bad.py` only wanted `read_temperature()` — but merely *importing* `sensor_utils_bad` was enough to trigger "Starting the sensor loop..." and a reading, before `main_app_bad.py`'s own code even got a chance to run. In a larger project this is exactly the kind of surprising, hard-to-trace behavior this lecture has warned about since Section 4.1: unrelated code executing as a side effect of something that looked like a harmless import.
 
-## 1b.2.3 Best Practices
+## 2.3 Best Practices
 
 - **Guard any top-level code that has a real effect** — starting a loop, printing, reading a sensor, opening a connection — behind `if __name__ == "__main__":`, even in a small, throwaway script. It costs nothing, and it guarantees the file can always be imported safely later, even if that was not the original plan.
 - **Keep the guarded block minimal.** Define a `main()` function with the actual logic, and let the guard do nothing but call it:
@@ -175,17 +175,17 @@ main_app_bad.py just needed the function, nothing else:
   if __name__ == "__main__":
       main()
   ```
-  This keeps the "am I being run directly?" check separate from the logic itself, which is easier to read, and easier to reuse or test later (Lecture 2 and beyond) without needing to fight the module-execution machinery to do it.
+  This keeps the "am I being run directly?" check separate from the logic itself, which is easier to read, and easier to reuse or test later without needing to fight the module-execution machinery to do it.
 - **A pure "library" file that is only ever meant to be imported does not need the guard at all** — it is only necessary for files that are *also* meant to be run directly.
-- This is precisely the pattern already relied on throughout the rest of this lecture — the `utils.py` relative-imports example (Section 1b.10.3) and the `interface/cli.py` example in the `uv` section (Section 1b.11.4) both use exactly this guard — and it is also *why* `python -m package.module` and `uv run` are able to "run" a module in the first place: executing a module that way sets that module's own `__name__` to `"__main__"`, the exact same mechanism demonstrated above.
+- This is precisely the pattern already relied on throughout the rest of this lecture — the `utils.py` relative-imports example (Section 10.3) and the `interface/cli.py` example in the `uv` section (Section 11.4) both use exactly this guard — and it is also *why* `python -m package.module` and `uv run` are able to "run" a module in the first place: executing a module that way sets that module's own `__name__` to `"__main__"`, the exact same mechanism demonstrated above.
 
 ---
 
-# 1b.3 Exception Handling in Python
+# 3 Exception Handling in Python
 
 Exception management lets a program **handle errors gracefully** instead of crashing, using `try`-`except` blocks to catch and respond to problems that occur while it runs.
 
-## 1b.3.1 try / except
+## 3.1 try / except
 
 ```python
 try:
@@ -218,7 +218,7 @@ except Exception as e:
 Error: Could not convert string to integer.
 ```
 
-## 1b.3.2 else & finally
+## 3.2 else & finally
 
 - **`else`** runs only if the `try` block raised **no** exception.
 - **`finally`** always runs, whether an exception occurred or not — the natural place for cleanup (closing files, releasing resources).
@@ -242,11 +242,11 @@ No errors occurred.
 This always executes.
 ```
 
-## 1b.3.3 Custom Exceptions
+## 3.3 Custom Exceptions
 
 Python lets you define your own exception types by inheriting from the built-in `Exception` class, to signal specific error conditions that the standard exceptions do not capture well.
 
-> This uses the `class` syntax and inheritance, which Lecture 2 covers in full detail. For now, it is enough to know the pattern below: `class SomeError(Exception): ...` defines a new, custom kind of error that can be raised and caught just like any built-in one.
+> This uses the `class` syntax and inheritance, which object-oriented programming covers in full detail. For now, it is enough to know the pattern below: `class SomeError(Exception): ...` defines a new, custom kind of error that can be raised and caught just like any built-in one.
 
 ```python
 class ConfigError(Exception):
@@ -281,9 +281,9 @@ Custom Exception Caught: Missing required configuration value: 'sample_rate_seco
 
 ---
 
-# 1b.4 Python Data Types & Type Hints
+# 4 Python Data Types & Type Hints
 
-## 1b.4.1 The Cost of Dynamic Typing: Errors a Compiler Would Catch
+## 4.1 The Cost of Dynamic Typing: Errors a Compiler Would Catch
 
 Python is a **dynamically typed** language: a variable's type is checked only *while the program is running*, not before. There is no compilation step that inspects the whole program up front and rejects it if a function is called with the wrong type of argument — that step simply does not exist in Python. This is convenient (less ceremony, faster to write), but it has a real cost: **type-related bugs only surface when the exact line of code that misuses a type actually executes**, which can be much later, much further away from the mistake, than the moment the bug was introduced.
 
@@ -389,13 +389,13 @@ This is the same lesson as Examples 1 and 2, taken further: mixing types in a si
 **Key Points:**
 - Python performs **no static type checking** before running a program — there is no compilation step to reject an incompatible call in advance.
 - A type-related bug can be introduced in one place and only manifest as a crash somewhere completely different, often far later in the program's execution.
-- This is the same underlying issue already discussed in Lecture 2 regarding Python and interfaces: Python has no compiler to catch a missing method or a wrong type ahead of time — everything is discovered at runtime, sometimes only when a specific, rarely-exercised code path runs.
+- This is the same underlying issue that shows up with Python and interfaces: Python has no compiler to catch a missing method or a wrong type ahead of time — everything is discovered at runtime, sometimes only when a specific, rarely-exercised code path runs.
 
 ---
 
-## 1b.4.2 Writing Robust Code Without Type Hints
+## 4.2 Writing Robust Code Without Type Hints
 
-Type hints (Section 1b.4.5) are one answer to the problem above, but they are optional, and plenty of professional Python code does not use them at all. Regardless of whether hints are used, a few habits go a long way toward avoiding the exact class of bugs shown above.
+Type hints (Section 4.5) are one answer to the problem above, but they are optional, and plenty of professional Python code does not use them at all. Regardless of whether hints are used, a few habits go a long way toward avoiding the exact class of bugs shown above.
 
 **1. Use descriptive, specific variable names.** A name should make it obvious what kind of value a variable holds, even without looking at where it was created.
 
@@ -459,12 +459,12 @@ def double_all_prices(prices):
 
 **Key Points:**
 - Descriptive naming and a docstring cost nothing at runtime, yet they communicate exactly the information a type hint would — just informally, and unchecked by any tool.
-- Guaranteeing a function always returns the same kind of value on every branch removes an entire category of bugs like the one in Section 1b.4.1.
+- Guaranteeing a function always returns the same kind of value on every branch removes an entire category of bugs like the one in Section 4.1.
 - These habits are good practice **regardless of whether type hints are used** — and, as the next sections show, they are exactly what type hints go on to formalize.
 
 ---
 
-## 1b.4.3 Checking Types at Runtime with `isinstance()`
+## 4.3 Checking Types at Runtime with `isinstance()`
 
 The three naming/return/docstring habits above are about *preventing* type confusion. `isinstance()` is a complementary tool for *defending* against it: it lets code check, while running, whether a value actually is the type it is supposed to be, before doing anything with it.
 
@@ -482,7 +482,7 @@ False
 True
 ```
 
-Applied to the mixed `sensor_values` list from Example 3 (Section 1b.4.1), `isinstance()` turns a crash into a controlled, predictable skip:
+Applied to the mixed `sensor_values` list from Example 3 (Section 4.1), `isinstance()` turns a crash into a controlled, predictable skip:
 
 ```python
 sensor_values = [21, 19, True, "22.5", 20]
@@ -525,7 +525,7 @@ print(isinstance(True, bool))   # True
 
 ---
 
-## 1b.4.4 A Quick Tour of Python's Built-in Data Types
+## 4.4 A Quick Tour of Python's Built-in Data Types
 
 Before formalizing anything with hints, it helps to have the core built-in types in view:
 
@@ -559,9 +559,9 @@ print(type(None))        # <class 'NoneType'>
 
 ---
 
-## 1b.4.5 Type Hints: Syntax and Purpose
+## 4.5 Type Hints: Syntax and Purpose
 
-**Type hints** let you annotate variables, function parameters, and return values with the type they are expected to hold. They **formalize**, in a way tools can check, exactly what Section 1b.4.2 was doing informally through naming and docstrings.
+**Type hints** let you annotate variables, function parameters, and return values with the type they are expected to hold. They **formalize**, in a way tools can check, exactly what Section 4.2 was doing informally through naming and docstrings.
 
 ```python
 name: str = "Alice"
@@ -604,11 +604,11 @@ print(find_user(99))   # None
 **Key Points:**
 - Type hints are written as `name: type` for variables/parameters, and `-> type` for return values.
 - They can express "either this type or `None`" with `X | None`.
-- They are the same information a good docstring or naming convention already communicates (Section 1b.4.2) — just in a form tools understand.
+- They are the same information a good docstring or naming convention already communicates (Section 4.2) — just in a form tools understand.
 
 ---
 
-## 1b.4.6 Let's See How It Works
+## 4.6 Let's See How It Works
 
 Type hints are **not enforced by Python itself** — they are purely documentation, unless a separate tool checks them. Rewriting the discount function with hints does not change its runtime behavior at all:
 
@@ -636,20 +636,20 @@ Python runs this without complaint: `code: str` is a hint, not a rule, so passin
 error: Argument 1 to "get_discount" has incompatible type "int"; expected "str"
 ```
 
-Most IDEs (VS Code, PyCharm, ...) run a type checker like this continuously in the background, underlining the mismatch as you type — turning what would otherwise be a runtime surprise (Section 1b.4.1) into an error you see immediately, while writing the code.
+Most IDEs (VS Code, PyCharm, ...) run a type checker like this continuously in the background, underlining the mismatch as you type — turning what would otherwise be a runtime surprise (Section 4.1) into an error you see immediately, while writing the code.
 
 ---
 
-## 1b.4.7 A Complete Example: Type Hints and `isinstance()` Together
+## 4.7 A Complete Example: Type Hints and `isinstance()` Together
 
-This example puts everything from this section (Section 1b.4) into a single, small IoT-flavored piece of code: type hints on variables and functions (Section 1b.4.5), `isinstance()` checks where a value actually needs to be protected (Section 1b.4.3), and comments spelling out exactly which parts are only documentation and which parts are doing real work. It is deliberately written with plain functions, not classes — classes are the subject of Lecture 2.
+This example puts everything from this section (Section 4) into a single, small IoT-flavored piece of code: type hints on variables and functions (Section 4.5), `isinstance()` checks where a value actually needs to be protected (Section 4.3), and comments spelling out exactly which parts are only documentation and which parts are doing real work. It is deliberately written with plain functions, not classes — classes are out of scope here.
 
 ```python
 def add_reading(readings: list[float], value: float) -> None:
     # `readings: list[float]` and `value: float` are documentation - by themselves
-    # they would NOT stop a string from being passed (Section 1b.4.6). The
+    # they would NOT stop a string from being passed (Section 4.6). The
     # isinstance() check below is what ACTUALLY enforces it, and it deliberately
-    # excludes bool too (Section 1b.4.3): bool is a subclass of int, so a plain
+    # excludes bool too (Section 4.3): bool is a subclass of int, so a plain
     # `isinstance(value, (int, float))` would wrongly accept True/False as if
     # they were real readings.
     if not isinstance(value, (int, float)) or isinstance(value, bool):
@@ -704,9 +704,9 @@ None
 
 ---
 
-# 1b.5 Stop Hardcoding Things: Managing Parameters and Configurations
+# 5 Stop Hardcoding Things: Managing Parameters and Configurations
 
-## 1b.5.1 The Problem with Hardcoded Values
+## 5.1 The Problem with Hardcoded Values
 
 A **hardcoded value** is a value written directly into the source code — a file path, a server address, a threshold, a secret key — instead of being supplied from the outside.
 
@@ -728,7 +728,7 @@ The rest of this section covers three standard ways to move values **out** of th
 
 ---
 
-## 1b.5.2 Command-Line Arguments
+## 5.2 Command-Line Arguments
 
 The simplest way to pass a value into a script is via `sys.argv`, a list of the raw strings passed on the command line — but for anything beyond one or two positional values, the standard library's **`argparse`** module is the idiomatic choice: it handles parsing, default values, type conversion, and even generates a `--help` message automatically.
 
@@ -763,7 +763,7 @@ python3 process_sensor.py --device-id sensor_1 --threshold 30
 
 ---
 
-## 1b.5.3 Environment Variables
+## 5.3 Environment Variables
 
 An **environment variable** is not a Python concept at all — it is an **operating system** concept. Every running process (a shell session, a program, a script) is given its own small set of key-value string pairs by the OS, called its **environment**. This is completely separate from any file on disk, and separate from the variables defined inside a program's own code.
 
@@ -824,7 +824,7 @@ api_key = os.getenv("API_KEY")
 
 ---
 
-## 1b.5.4 Configuration Files: YAML and JSON
+## 5.4 Configuration Files: YAML and JSON
 
 For configuration with more structure than a handful of flat key-value pairs, a **configuration file** is usually clearer than a long list of environment variables or command-line flags. The two most common formats are quickly compared here.
 
@@ -871,9 +871,9 @@ sensor_1 5
 
 ---
 
-# 1b.6 Logging
+# 6 Logging
 
-## 1b.6.1 Why Not Just `print()`?
+## 6.1 Why Not Just `print()`?
 
 **Logging** is the practice of having a running program record what it is doing — as a sequence of timestamped messages — so that someone can look back at that record later to understand what happened, diagnose a problem, or simply confirm that things are working as expected. The idea is not specific to Python, or even to programming languages with a dedicated `logging`-style library: it is a general practice, present in essentially every serious piece of software.
 
@@ -885,7 +885,7 @@ A central part of logging is that **not every message matters equally**. Logging
 - **ERROR** — something failed, and a specific operation could not complete (e.g. "failed to reach the device").
 - **CRITICAL** — a severe failure, possibly threatening the program's ability to keep running at all (e.g. "cannot connect to the database at startup").
 
-Attaching a level to every message is what makes it possible to **filter** later: during normal operation you might only want to see `WARNING` and above, while actively chasing a bug you might want to see everything, `DEBUG` included — without changing a single logging call in the code, only the configured threshold (Section 1b.6.2 shows exactly how).
+Attaching a level to every message is what makes it possible to **filter** later: during normal operation you might only want to see `WARNING` and above, while actively chasing a bug you might want to see everything, `DEBUG` included — without changing a single logging call in the code, only the configured threshold (Section 6.2 shows exactly how).
 
 With this in mind, it is easier to see why `print()`, used on its own, is not a substitute for real logging:
 
@@ -894,9 +894,9 @@ With this in mind, it is easier to see why `print()`, used on its own, is not a 
 - Cannot easily be **filtered** (e.g., "show me only warnings and above") or **redirected** (e.g., "send this to a file, not the terminal") without extra, manual work.
 - No **persistent record** — once the terminal closes, the output is gone.
 
-## 1b.6.2 The `logging` Module Basics
+## 6.2 The `logging` Module Basics
 
-Python's built-in `logging` module solves all of the above, implementing exactly the general idea from Section 1b.6.1: messages, each with one of the five severity levels just introduced, filterable by a configured threshold.
+Python's built-in `logging` module solves all of the above, implementing exactly the general idea from Section 6.1: messages, each with one of the five severity levels just introduced, filterable by a configured threshold.
 
 ```python
 import logging
@@ -921,7 +921,7 @@ ERROR: Failed to reach the device
 - `logging.getLogger(__name__)` is the standard pattern: it names the logger after the current module, so log messages from different files can be told apart.
 - The `format` string controls what each log line looks like; a common addition is `%(asctime)s` at the front, to include a timestamp.
 
-## 1b.6.3 Logging to a File
+## 6.3 Logging to a File
 
 Instead of (or in addition to) printing to the terminal, a **handler** can send log records elsewhere — most commonly, to a file:
 
@@ -944,13 +944,13 @@ logger.info("Device sensor_1 started")   # written to smart_home.log, not printe
 
 ---
 
-# 1b.7 Managing Dependencies
+# 7 Managing Dependencies
 
-Almost every real project depends on third-party packages (e.g. `PyYAML`, used in Section 1b.5.4). **Dependency management** means declaring, somewhere in the project, exactly which packages — and which versions of them — are needed, so that anyone (a teammate, a server, a CI pipeline) can recreate the same working environment with one command, instead of guessing what to `pip install`.
+Almost every real project depends on third-party packages (e.g. `PyYAML`, used in Section 5.4). **Dependency management** means declaring, somewhere in the project, exactly which packages — and which versions of them — are needed, so that anyone (a teammate, a server, a CI pipeline) can recreate the same working environment with one command, instead of guessing what to `pip install`.
 
 Python has two standard ways to declare this, covered as two subsections below: the older, simpler **`requirements.txt`**, and the modern, more complete **`pyproject.toml`**. They are not mutually exclusive — many projects use both, each for what it is best at, as explained at the end of this section.
 
-## 1b.7.1 `requirements.txt`
+## 7.1 `requirements.txt`
 
 A `requirements.txt` file lists the third-party packages a project depends on, one per line.
 
@@ -992,7 +992,7 @@ Which operator to prefer depends on the project: applications deployed to produc
 - `pip freeze` writes it; `pip install -r` reads it.
 - It only ever lists dependencies — nothing about the project itself (its name, its version, how to build or install it as a package). That gap is exactly what `pyproject.toml`, covered next, fills.
 
-## 1b.7.2 `pyproject.toml`
+## 7.2 `pyproject.toml`
 
 `pyproject.toml` is the modern, standardized configuration file for a Python project. Unlike `requirements.txt`, it is not limited to listing dependencies: it is a single place for the project's **metadata** (name, version, description, authors), its **dependencies**, and instructions for **packaging tools** on how to actually build and install it.
 
@@ -1014,7 +1014,7 @@ requires = ["setuptools>=68.0"]
 build-backend = "setuptools.build_meta"
 ```
 
-- The **`[project]`** table holds the metadata and the `dependencies` list — the same information `requirements.txt` held, using the exact same version operators from Section 1b.7.1 (`>=6.0,<7.0`, `~=1.0`, ...), just nested inside one structured file instead of a separate plain-text one.
+- The **`[project]`** table holds the metadata and the `dependencies` list — the same information `requirements.txt` held, using the exact same version operators from Section 7.1 (`>=6.0,<7.0`, `~=1.0`, ...), just nested inside one structured file instead of a separate plain-text one.
 - The **`[build-system]`** table tells packaging tools *how* to build this project into an installable package, and with what tool (here, `setuptools`) — this is the piece `requirements.txt` has no equivalent for at all.
 
 With a `pyproject.toml` in place, the project itself becomes installable as a package:
@@ -1025,7 +1025,7 @@ pip install -e .     # editable/"development" install: links to the source inste
                       # so local edits are picked up immediately without reinstalling
 ```
 
-> The `-e` (editable) install is exactly what makes the `src/` layout from Section 1b.9 practical during development: it installs the package properly — closing the "silently imports the local, uninstalled folder" gap discussed there — while still letting the code be edited in place.
+> The `-e` (editable) install is exactly what makes the `src/` layout from Section 9 practical during development: it installs the package properly — closing the "silently imports the local, uninstalled folder" gap discussed there — while still letting the code be edited in place.
 
 Higher-level tools such as [`build`](https://build.pypa.io/) (to produce a distributable package), or all-in-one project managers like `poetry`, `hatch`, or `uv`, all read and write `pyproject.toml` as their common, standardized format — this is precisely why it has become the standard, replacing the older `setup.py`.
 
@@ -1043,9 +1043,9 @@ In practice, the two are often combined rather than treated as strictly either/o
 
 ---
 
-# 1b.8 Virtual Environments
+# 8 Virtual Environments
 
-## 1b.8.1 What Is a Virtual Environment, and Why It Matters
+## 8.1 What Is a Virtual Environment, and Why It Matters
 
 By default, there is only **one** Python installation on a machine (the "system" or "global" Python), and every package installed with `pip` goes into that same, shared installation — used by every script and every project on that machine, all at once. This causes a very concrete problem: if **Project A** needs `requests==2.20.0` and **Project B**, developed later on the same machine, needs `requests>=2.31.0`, there is no way to satisfy both at the same time — installing one version necessarily means the other project stops working, because there is only one shared copy of `requests` for the whole system to share.
 
@@ -1053,11 +1053,11 @@ A **virtual environment** solves this by giving each project its **own private c
 
 This matters for several concrete reasons:
 - **Isolation**: two projects on the same machine can depend on different, even incompatible, versions of the same package without conflict.
-- **Reproducibility**: a virtual environment built from a project's `requirements.txt` or `pyproject.toml` (Section 1b.7) contains *exactly* those dependencies — nothing extra left over from unrelated work on the same machine.
+- **Reproducibility**: a virtual environment built from a project's `requirements.txt` or `pyproject.toml` (Section 7) contains *exactly* those dependencies — nothing extra left over from unrelated work on the same machine.
 - **No special privileges needed**: a virtual environment is just a regular, user-owned directory, so installing packages into it never requires administrator/root access.
 - **Safe to throw away**: since it holds nothing but reinstallable packages, a broken or messy virtual environment can simply be deleted and recreated from scratch, instead of being carefully repaired.
 
-## 1b.8.2 Creating and Using a Virtual Environment with `venv`
+## 8.2 Creating and Using a Virtual Environment with `venv`
 
 Python includes a built-in module, `venv`, for exactly this purpose — no extra installation required.
 
@@ -1137,9 +1137,9 @@ pip     25.1.1
 
 `requests` (and its own dependencies, pulled in automatically) exists only inside `venv_a`. `venv_b`, created independently, never sees it — exactly as if the two environments lived on two entirely separate machines.
 
-## 1b.8.3 Virtual Environments and Dependency Management, Together
+## 8.3 Virtual Environments and Dependency Management, Together
 
-Virtual environments and the dependency files from Section 1b.7 are meant to be used **together**, not as alternatives to each other: the dependency file (`requirements.txt` or `pyproject.toml`) is the reproducible **recipe**; the virtual environment is the disposable **kitchen** where that recipe gets prepared, fresh, every time. The typical workflow combines both:
+Virtual environments and the dependency files from Section 7 are meant to be used **together**, not as alternatives to each other: the dependency file (`requirements.txt` or `pyproject.toml`) is the reproducible **recipe**; the virtual environment is the disposable **kitchen** where that recipe gets prepared, fresh, every time. The typical workflow combines both:
 
 ```
 $ python3 -m venv venv
@@ -1159,16 +1159,16 @@ Once new packages are added during development, the dependency file is updated t
 - A virtual environment gives a project its own private, isolated copy of the Python interpreter and installed packages.
 - `python3 -m venv venv` creates one; `source venv/bin/activate` (or `venv\Scripts\activate` on Windows) activates it; `deactivate` returns to the system Python.
 - The Python **version** inside the environment is whichever interpreter created it (`python3.11 -m venv ...` vs `python3.12 -m venv ...`) — it must already be installed on the machine, `venv` cannot install a new version by itself.
-- It solves dependency **conflicts between projects**, not dependency **declaration** — that is still the job of `requirements.txt`/`pyproject.toml` (Section 1b.7); the two are companions, used together.
+- It solves dependency **conflicts between projects**, not dependency **declaration** — that is still the job of `requirements.txt`/`pyproject.toml` (Section 7); the two are companions, used together.
 - Never commit a virtual environment folder to version control — only the dependency declaration files that can recreate it.
 
 ---
 
-# 1b.9 Python Project Layout
+# 9 Python Project Layout
 
-Unlike some languages and frameworks, Python itself does not enforce any particular project structure. There is no compiler or build tool that rejects a `.py` file for being in the "wrong" place, and a script can import anything from anywhere, as long as Python can find it (Section 1b.10 covers exactly how). This is different from, say, a Django or Flask project scaffolded with the framework's own command-line tool, which imposes a specific, opinionated layout from the very start — the Python interpreter itself has no such opinion, with or without a framework.
+Unlike some languages and frameworks, Python itself does not enforce any particular project structure. There is no compiler or build tool that rejects a `.py` file for being in the "wrong" place, and a script can import anything from anywhere, as long as Python can find it (Section 10 covers exactly how). This is different from, say, a Django or Flask project scaffolded with the framework's own command-line tool, which imposes a specific, opinionated layout from the very start — the Python interpreter itself has no such opinion, with or without a framework.
 
-This freedom is a double-edged sword: a project can grow with no upfront ceremony, but nothing stops it from turning into an unstructured pile of files either, imported in inconsistent, hard-to-follow ways. Giving a project deliberate structure is therefore a matter of **discipline**, not of following a language rule — but it is just as important as any other practice covered in this lecture. How the files of a Python project are organized affects how easy it is to navigate, test, package, and eventually distribute — for the same underlying reasons already discussed for naming (Section 1b.4.2), configuration (Section 1b.5), and dependencies (Section 1b.7): a project that anyone can pick up, understand, and run the same way, without having to guess. Two layouts are common.
+This freedom is a double-edged sword: a project can grow with no upfront ceremony, but nothing stops it from turning into an unstructured pile of files either, imported in inconsistent, hard-to-follow ways. Giving a project deliberate structure is therefore a matter of **discipline**, not of following a language rule — but it is just as important as any other practice covered in this lecture. How the files of a Python project are organized affects how easy it is to navigate, test, package, and eventually distribute — for the same underlying reasons already discussed for naming (Section 4.2), configuration (Section 5), and dependencies (Section 7): a project that anyone can pick up, understand, and run the same way, without having to guess. Two layouts are common.
 
 **Flat layout** — the package's source files sit directly at the project root:
 
@@ -1205,7 +1205,7 @@ For any project that will be tested, installed, or distributed as a package (not
 
 **A more realistic example: a Smart Home project**
 
-The examples above only show one or two module files, which does not really show *why* structure matters. Once a project grows — as the Smart Home case study from Lecture 2 realistically would, with more devices, more automation logic, and more ways for a user to interact with it — grouping files by **responsibility** into subfolders, rather than dropping everything into one flat directory, is what keeps it navigable:
+The examples above only show one or two module files, which does not really show *why* structure matters. Once a project grows — as a Smart Home case study realistically would, with more devices, more automation logic, and more ways for a user to interact with it — grouping files by **responsibility** into subfolders, rather than dropping everything into one flat directory, is what keeps it navigable:
 
 ```
 smart_home_system/
@@ -1213,7 +1213,7 @@ smart_home_system/
 │   └── smart_home_system/
 │       ├── __init__.py
 │       ├── __main__.py
-│       ├── devices/                  # what a device IS: Device, Sensor, Actuator (Lecture 2)
+│       ├── devices/                  # what a device IS: Device, Sensor, Actuator
 │       │   ├── __init__.py
 │       │   ├── sensors.py            #   TemperatureSensor, HumiditySensor
 │       │   └── actuators.py          #   SmartLight, SmartLock
@@ -1222,7 +1222,7 @@ smart_home_system/
 │       │   └── automation_rules.py   #   e.g. "if temperature > threshold, turn on the fan"
 │       ├── storage/                  # how device data is persisted and retrieved
 │       │   ├── __init__.py
-│       │   └── data_manager.py       #   the DataManager class from Lecture 2
+│       │   └── data_manager.py       #   a DataManager class
 │       └── interface/                # how a human or another system talks to it
 │           ├── __init__.py
 │           └── cli.py                #   a command-line interface, for now
@@ -1231,7 +1231,7 @@ smart_home_system/
 │   ├── test_automation_rules.py
 │   └── test_data_manager.py
 ├── config/
-│   └── settings.yaml                 # Section 1b.5.4
+│   └── settings.yaml                 # Section 5.4
 ├── LICENSE
 ├── README.md
 └── pyproject.toml
@@ -1239,24 +1239,24 @@ smart_home_system/
 
 Every subfolder answers a different question about the code inside it:
 
-- **`devices/`** — *what a device is*: the `Device`/`Sensor`/`Actuator` class hierarchy from Lecture 2, with no awareness of automation rules or storage.
+- **`devices/`** — *what a device is*: a `Device`/`Sensor`/`Actuator` class hierarchy, with no awareness of automation rules or storage.
 - **`logic/`** — *what the system decides to do*: the rules that react to device data (e.g., turning on a light when a room is dark), built on top of `devices/` but independent of how data happens to be stored or displayed.
-- **`storage/`** — *how device data is kept and retrieved*: exactly the responsibility the `DataManager` class already had in Lecture 2 (Section 2.14) — swapping it from in-memory storage to a real database would only mean changing files inside this one folder.
-- **`interface/`** — *how the outside world interacts with the system*: a CLI today; in later lectures (Section 4, HTTP/REST), this could just as easily become a web API instead, without touching `devices/`, `logic/`, or `storage/` at all.
+- **`storage/`** — *how device data is kept and retrieved*: exactly the responsibility a `DataManager` class would have — swapping it from in-memory storage to a real database would only mean changing files inside this one folder.
+- **`interface/`** — *how the outside world interacts with the system*: a CLI today; it could just as easily become a web API instead (for example over HTTP/REST), without touching `devices/`, `logic/`, or `storage/` at all.
 
-This is the same **separation of concerns** already introduced with the `SmartHome`/`DataManager` delegation in Lecture 2 (Section 2.14) — only now applied to an entire project's folder structure, not just to two classes.
+This is the same **separation of concerns** as a `SmartHome`/`DataManager` delegation — only now applied to an entire project's folder structure, not just to two classes.
 
 **Key Points:**
 - Keep top-level "housekeeping" files (`README.md`, `LICENSE`, `pyproject.toml` or `requirements.txt`) at the project root; keep source code grouped into directories rather than loose files.
 - A `tests/` directory, mirroring the package's structure, is standard practice.
 - The `src/` layout is the safer default for anything meant to be installed or distributed, precisely because it prevents accidentally importing an uninstalled local copy of the package.
-- As a project grows, subfolders should split code by **responsibility** (e.g. `devices/`, `logic/`, `storage/`, `interface/`), not by convenience — the same separation-of-concerns idea already used for the `SmartHome`/`DataManager` delegation in Lecture 2, just applied at the scale of a whole project.
+- As a project grows, subfolders should split code by **responsibility** (e.g. `devices/`, `logic/`, `storage/`, `interface/`), not by convenience — the same separation-of-concerns idea behind a `SmartHome`/`DataManager` delegation, just applied at the scale of a whole project.
 
 ---
 
-# 1b.10 Python Modules & Packages
+# 10 Python Modules & Packages
 
-## 1b.10.1 Modules and `import`
+## 10.1 Modules and `import`
 
 A **module** is simply a single `.py` file. Anything defined in it — functions, variables, classes — becomes accessible from other files via `import`.
 
@@ -1276,7 +1276,7 @@ from sensors import read_temperature
 print(read_temperature())
 ```
 
-## 1b.10.2 Packages and `__init__.py`
+## 10.2 Packages and `__init__.py`
 
 A **package** is a directory containing multiple modules, marked as a package by an `__init__.py` file inside it (which can be empty — its mere presence is what historically made the directory importable as a package; this file is also the natural place to run package-level setup code, or to decide what a `from package import *` should expose).
 
@@ -1304,7 +1304,7 @@ print(read_temperature())
 21.5
 ```
 
-**When does `__init__.py` actually matter?** Modern Python (3.3+) can technically import a directory as a so-called **namespace package** even with no `__init__.py` inside it at all — the earlier example still runs without it. This makes it easy to conclude the file is now optional and skip it. It is not: skipping it removes a safety net, and the way it fails is exactly the kind of *silent*, hard-to-trace problem this lecture has been warning about since Section 1b.4.
+**When does `__init__.py` actually matter?** Modern Python (3.3+) can technically import a directory as a so-called **namespace package** even with no `__init__.py` inside it at all — the earlier example still runs without it. This makes it easy to conclude the file is now optional and skip it. It is not: skipping it removes a safety net, and the way it fails is exactly the kind of *silent*, hard-to-trace problem this lecture has been warning about since Section 4.
 
 Here is the concrete problem. Two **completely unrelated** projects both happen to have a top-level folder named `smart_home` — one belonging to `project_a`, one to `project_b`. Neither has an `__init__.py`:
 
@@ -1350,7 +1350,7 @@ The moment `smart_home` becomes a **regular** package (via `__init__.py`), Pytho
 
 > **A simple rule of thumb for this course:** always add an `__init__.py` file — even an empty one — to every directory meant to be imported as a package. Treat namespace packages (no `__init__.py`) as an advanced, special-purpose feature to reach for deliberately, not a shortcut for skipping a file that "seems unnecessary." An empty `__init__.py` costs nothing and guarantees Python will fail clearly and immediately if something is wrong, instead of silently doing something unexpected.
 
-## 1b.10.3 Absolute vs. Relative Imports
+## 10.3 Absolute vs. Relative Imports
 
 An **absolute import** spells out the full path to what is being imported, starting from a top-level package — this is what `main.py` used above: `from smart_home.sensors import read_temperature`.
 
@@ -1390,17 +1390,17 @@ Run directly (`python3 smart_home/utils.py`), Python has no idea `utils.py` belo
 
 ---
 
-# 1b.11 Faster Project & Dependency Management with `uv`
+# 11 Faster Project & Dependency Management with `uv`
 
-## 1b.11.1 What Is `uv`?
+## 11.1 What Is `uv`?
 
-Sections 1b.7 and 1b.8 covered `pip`, `requirements.txt`, `pyproject.toml`, and `venv` as separate, standard-library-adjacent tools, each solving one piece of the puzzle. [**`uv`**](https://docs.astral.sh/uv/) is a single, modern command-line tool (built by Astral, written in Rust for speed) that **combines all of those roles** — package installer, virtual environment manager, and project/build tool — while still producing and reading the exact same `pyproject.toml` already introduced in Section 1b.7.2. It is not a competing standard; it is a faster, more convenient way to do the same things covered so far.
+Sections 7 and 8 covered `pip`, `requirements.txt`, `pyproject.toml`, and `venv` as separate, standard-library-adjacent tools, each solving one piece of the puzzle. [**`uv`**](https://docs.astral.sh/uv/) is a single, modern command-line tool (built by Astral, written in Rust for speed) that **combines all of those roles** — package installer, virtual environment manager, and project/build tool — while still producing and reading the exact same `pyproject.toml` already introduced in Section 7.2. It is not a competing standard; it is a faster, more convenient way to do the same things covered so far.
 
 Installation instructions change over time and depend on the operating system, so rather than duplicating them here, follow the official installation guide: **https://docs.astral.sh/uv/getting-started/installation/**. The rest of this section assumes `uv` is already installed and available as the `uv` command.
 
-## 1b.11.2 Initializing a Project with the `src/` Layout Already Covered
+## 11.2 Initializing a Project with the `src/` Layout Already Covered
 
-`uv init --package` scaffolds a new project using exactly the `src/` layout from Section 1b.9, instead of it having to be built by hand:
+`uv init --package` scaffolds a new project using exactly the `src/` layout from Section 9, instead of it having to be built by hand:
 
 ```
 $ uv init --package smart_home_system
@@ -1410,7 +1410,7 @@ Initialized project `smart-home-system`
 **Output (files created):**
 ```
 smart_home_system/
-├── .gitignore              # already excludes .venv/ - Section 1b.8.3's rule, enforced from the start
+├── .gitignore              # already excludes .venv/ - Section 8.3's rule, enforced from the start
 ├── .python-version         # pins the Python version for this project
 ├── README.md
 ├── pyproject.toml
@@ -1419,7 +1419,7 @@ smart_home_system/
         └── __init__.py     # contains a starter main() function
 ```
 
-The generated `pyproject.toml` already has the `[project]` and `[build-system]` tables from Section 1b.7.2 filled in:
+The generated `pyproject.toml` already has the `[project]` and `[build-system]` tables from Section 7.2 filled in:
 
 ```toml
 [project]
@@ -1441,11 +1441,11 @@ requires = ["uv_build>=0.11.29,<0.12.0"]
 build-backend = "uv_build"
 ```
 
-From here, the richer, multi-folder layout from Section 1b.9 (`devices/`, `logic/`, `storage/`, `interface/`) is simply built by hand inside `src/smart_home_system/`, exactly as shown there — `uv init` provides the standard scaffolding around it, not a replacement for it.
+From here, the richer, multi-folder layout from Section 9 (`devices/`, `logic/`, `storage/`, `interface/`) is simply built by hand inside `src/smart_home_system/`, exactly as shown there — `uv init` provides the standard scaffolding around it, not a replacement for it.
 
-## 1b.11.3 Dependencies and the Virtual Environment, Handled Automatically
+## 11.3 Dependencies and the Virtual Environment, Handled Automatically
 
-This is where `uv` most visibly merges Section 1b.7 (dependencies) and Section 1b.8 (virtual environments) into one step. Adding a dependency does not require creating a virtual environment first — `uv` does it automatically the first time it is needed:
+This is where `uv` most visibly merges Section 7 (dependencies) and Section 8 (virtual environments) into one step. Adding a dependency does not require creating a virtual environment first — `uv` does it automatically the first time it is needed:
 
 ```
 $ cd smart_home_system
@@ -1458,9 +1458,9 @@ Installed 2 packages in 7ms
  + smart-home-system==0.1.0 (from file:///.../smart_home_system)
 ```
 
-A single command: created `.venv` (Section 1b.8.2), installed `pyyaml` into it, added `pyyaml` to the `dependencies` list in `pyproject.toml`, and generated a `uv.lock` file recording the *exact* resolved versions of every dependency (including transitive ones) — an even stronger, automatically maintained version of the "pinned `requirements.txt` for reproducibility" idea from Section 1b.7.1.
+A single command: created `.venv` (Section 8.2), installed `pyyaml` into it, added `pyyaml` to the `dependencies` list in `pyproject.toml`, and generated a `uv.lock` file recording the *exact* resolved versions of every dependency (including transitive ones) — an even stronger, automatically maintained version of the "pinned `requirements.txt` for reproducibility" idea from Section 7.1.
 
-Rebuilding the environment from scratch — the "disposable kitchen" idea from Section 1b.8.3 — becomes a single command instead of a multi-step `venv` + `pip install -r` sequence:
+Rebuilding the environment from scratch — the "disposable kitchen" idea from Section 8.3 — becomes a single command instead of a multi-step `venv` + `pip install -r` sequence:
 
 ```
 $ rm -rf .venv
@@ -1472,9 +1472,9 @@ Installed 2 packages in 4ms
  + smart-home-system==0.1.0 (from file:///.../smart_home_system)
 ```
 
-## 1b.11.4 Running One or More `main`s from the Command Line
+## 11.4 Running One or More `main`s from the Command Line
 
-`uv run` executes a command **inside the project's `.venv`** automatically — there is no need to `source .venv/bin/activate` first (Section 1b.8.2); `uv` locates the project's environment and uses it directly:
+`uv run` executes a command **inside the project's `.venv`** automatically — there is no need to `source .venv/bin/activate` first (Section 8.2); `uv` locates the project's environment and uses it directly:
 
 ```
 $ uv run python -c "import sys; print(sys.executable)"
@@ -1488,7 +1488,7 @@ $ uv run smart-home-system
 Hello from smart-home-system!
 ```
 
-A real project usually has **more than one** runnable entry point — following the multi-folder layout from Section 1b.9, imagine `src/smart_home_system/interface/cli.py` with its own `main()`:
+A real project usually has **more than one** runnable entry point — following the multi-folder layout from Section 9, imagine `src/smart_home_system/interface/cli.py` with its own `main()`:
 
 ```python
 # src/smart_home_system/interface/cli.py
@@ -1500,7 +1500,7 @@ if __name__ == "__main__":
     main()
 ```
 
-`uv run` can execute it two equivalent ways — as a module (Section 1b.10.1), or by file path directly:
+`uv run` can execute it two equivalent ways — as a module (Section 10.1), or by file path directly:
 
 ```
 $ uv run python -m smart_home_system.interface.cli
@@ -1513,7 +1513,7 @@ Smart Home CLI starting...
 Both run inside the same project `.venv`, with `pyyaml` and every other declared dependency already available — no separate activation step, regardless of which one of the project's several entry points is being run.
 
 **Key Points:**
-- `uv` is not a new concept — it implements everything from Sections 1b.7 and 1b.8 (dependencies, `pyproject.toml`, virtual environments) in one faster tool, using the same standard `pyproject.toml` format.
-- `uv init --package` scaffolds the `src/` layout from Section 1b.9 automatically.
+- `uv` is not a new concept — it implements everything from Sections 7 and 8 (dependencies, `pyproject.toml`, virtual environments) in one faster tool, using the same standard `pyproject.toml` format.
+- `uv init --package` scaffolds the `src/` layout from Section 9 automatically.
 - `uv add <package>` installs a dependency **and** creates/updates the `.venv` in one step; `uv sync` rebuilds that `.venv` from `pyproject.toml`/`uv.lock` on demand.
 - `uv run <target>` runs any script, module (`-m package.module`), or declared `[project.scripts]` entry point inside the project's `.venv`, without a manual `activate` step — the natural way to run one of several `main`s in a multi-module project.

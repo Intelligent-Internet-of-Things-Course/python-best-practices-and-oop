@@ -28,7 +28,7 @@ common thread.
 The content is split into **two standalone lecture files**, meant to be read in
 order:
 
-### 1️⃣ [`python_best_practices.md`](python_best_practices.md) — *Lecture 1b · Python Best Practices*
+### 1️⃣ [`python_best_practices.md`](python_best_practices.md) — *Python Best Practices*
 
 Practices that make *any* Python code more robust, readable, and maintainable,
 regardless of whether it uses OOP. It covers:
@@ -43,7 +43,7 @@ regardless of whether it uses OOP. It covers:
 - Python project layout, modules, packages, and absolute vs. relative imports
 - `uv` as a modern, faster all-in-one project/dependency/venv workflow
 
-### 2️⃣ [`python_oop.md`](python_oop.md) — *Lecture 2 · Python OOP & Use Case Modelling*
+### 2️⃣ [`python_oop.md`](python_oop.md) — *Python OOP & Use Case Modelling*
 
 Object-Oriented Programming from first principles, applied to an IoT use case:
 
@@ -54,15 +54,15 @@ Object-Oriented Programming from first principles, applied to an IoT use case:
 - Polymorphism (duck typing, operator, class-based) and abstraction with `abc`
 - Exception management in an OOP context
 - **Smart Home example**: identifying entities, sensors & actuators, refactoring the model with inheritance (`Device` → `Sensor` / `Actuator` → `TemperatureSensor`, `HumiditySensor`, `SmartLight`)
-- 🗃️ Smart Home + Data Manager, and implementing the `SmartHome` class and its behaviours
-- 🎯 Design patterns: Singleton, Factory, Observer, and the delegation principle
+- Smart Home + Data Manager, and implementing the `SmartHome` class and its behaviours
+- Design patterns: Singleton, Factory, Observer, and the delegation principle
 
 ## 📁 Repository Layout
 
 ```
 .
-├── python_best_practices.md   # Lecture 1b - Python Best Practices
-├── python_oop.md              # Lecture 2 - Python OOP & Use Case Modelling
+├── python_best_practices.md   # Python Best Practices
+├── python_oop.md              # Python OOP & Use Case Modelling
 ├── images/                    # Diagrams and figures referenced by the notes
 ├── LICENSE                    # Creative Commons Attribution 4.0
 └── README.md                  # This file

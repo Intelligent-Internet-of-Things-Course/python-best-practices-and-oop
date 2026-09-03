@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-# Lecture 2 - Python Object Oriented Programming & Use Case Modelling
+# Python OOP & Use Case Modelling
 
 <!-- omit in toc -->
 ## Lecture Information
@@ -15,85 +15,85 @@
 <!-- omit in toc -->
 # Table of Contents
 
-- [2.1 Object Oriented Programming (OOP) Introduction](#21-object-oriented-programming-oop-introduction)
-  - [2.1.1 What Is Object-Oriented Programming ?](#211-what-is-object-oriented-programming-)
-  - [2.1.2 How Was Object-Oriented Programming Born?](#212-how-was-object-oriented-programming-born)
-  - [2.1.3 OOP Among Programming Paradigms](#213-oop-among-programming-paradigms)
-  - [2.1.4 Procedural Programming vs. Object-Oriented Programming](#214-procedural-programming-vs-object-oriented-programming)
-    - [2.1.4.1 Example: Procedural vs. Object-Oriented Approach](#2141-example-procedural-vs-object-oriented-approach)
-    - [2.1.4.2 Key Points](#2142-key-points)
-  - [2.1.5 Limitation of "Simple" Data Structures](#215-limitation-of-simple-data-structures)
-  - [2.1.6 Classes, Objects and Interfaces](#216-classes-objects-and-interfaces)
-  - [2.1.7 The Four Pillars of Object-Oriented Programming](#217-the-four-pillars-of-object-oriented-programming)
-- [2.2 OOP & Python](#22-oop--python)
-  - [2.2.1 Defining a Class in Python](#221-defining-a-class-in-python)
-  - [2.2.2 The Constructor and Object Creation](#222-the-constructor-and-object-creation)
-    - [2.2.2.1 The `__init__()` Method](#2221-the-__init__-method)
-    - [2.2.2.2 Creating an Instance of a Class](#2222-creating-an-instance-of-a-class)
-    - [2.2.2.3 Multiple Instances of the Same Class](#2223-multiple-instances-of-the-same-class)
-    - [2.2.2.4 Understanding `self`](#2224-understanding-self)
-  - [2.2.3 Instance Attributes](#223-instance-attributes)
-    - [2.2.3.1 Adding Attributes to the `__init__()` Method](#2231-adding-attributes-to-the-__init__-method)
-    - [2.2.3.2 Creating Instances with Attributes](#2232-creating-instances-with-attributes)
-    - [2.2.3.3 Instances Without Parameters](#2233-instances-without-parameters)
-    - [2.2.3.4 Access Instance Attributes](#2234-access-instance-attributes)
-    - [2.2.3.5 Change Instance Attributes](#2235-change-instance-attributes)
-  - [2.2.4 Instance Methods and Dunder Methods](#224-instance-methods-and-dunder-methods)
-    - [2.2.4.1 Classes & Instance Methods](#2241-classes--instance-methods)
-    - [2.2.4.2 Pythonic Class Print Method](#2242-pythonic-class-print-method)
-    - [2.2.4.3 Pythonic Dunder Methods](#2243-pythonic-dunder-methods)
-    - [2.2.4.4 Object Creation Internals: `__new__()` and `__init__()`](#2244-object-creation-internals-__new__-and-__init__)
-    - [2.2.4.5 The Class Destructor `__del__()`](#2245-the-class-destructor-__del__)
-  - [2.2.5 Class Attributes, Class Methods, and Static Methods](#225-class-attributes-class-methods-and-static-methods)
-    - [2.2.5.1 Class Attributes](#2251-class-attributes)
-    - [2.2.5.2 Class Methods](#2252-class-methods)
-    - [2.2.5.3 Static Methods](#2253-static-methods)
-  - [2.2.6 Encapsulation and Access Control](#226-encapsulation-and-access-control)
-    - [2.2.6.1 Access Modifiers in Python](#2261-access-modifiers-in-python)
-    - [2.2.6.2 Getters and Setters](#2262-getters-and-setters)
-    - [2.2.6.3 The Pythonic Way: `@property`, `.setter`, and `.deleter`](#2263-the-pythonic-way-property-setter-and-deleter)
-  - [2.2.7 Inheritance](#227-inheritance)
-    - [2.2.7.1 Class Inheritance](#2271-class-inheritance)
-    - [2.2.7.2 Method Overriding](#2272-method-overriding)
-    - [2.2.7.3 Multilevel and Multiple Inheritance](#2273-multilevel-and-multiple-inheritance)
-    - [2.2.7.4 Method Resolution Order (MRO)](#2274-method-resolution-order-mro)
-  - [2.2.8 Polymorphism](#228-polymorphism)
-    - [2.2.8.1 Duck Typing](#2281-duck-typing)
-    - [2.2.8.2 Operator Polymorphism](#2282-operator-polymorphism)
-    - [2.2.8.3 Class-Based Polymorphism](#2283-class-based-polymorphism)
-    - [2.2.8.4 Polymorphism via Method Overriding](#2284-polymorphism-via-method-overriding)
-    - [2.2.8.5 Method Overloading vs. Method Overriding](#2285-method-overloading-vs-method-overriding)
-  - [2.2.9 Abstraction](#229-abstraction)
-    - [2.2.9.1 Informal Interfaces](#2291-informal-interfaces)
-    - [2.2.9.2 Formal Abstraction with `abc`](#2292-formal-abstraction-with-abc)
-  - [2.2.10 Classes & Comments](#2210-classes--comments)
-- [2.3 Exception Management](#23-exception-management)
-  - [2.3.1 Exception Management in Python](#231-exception-management-in-python)
-  - [2.3.2 Else & Finally](#232-else--finally)
-  - [2.3.3 Custom Exceptions](#233-custom-exceptions)
-- [2.4 Object Oriented Programming Smart Home Example (in Python)](#24-object-oriented-programming-smart-home-example-in-python)
-  - [2.4.1 Which are the Entities in the Project ?](#241-which-are-the-entities-in-the-project-)
-  - [2.4.2 Sensors & Actuators Characteristics](#242-sensors--actuators-characteristics)
-  - [2.4.3 Open "Issues" and Model Improvements](#243-open-issues-and-model-improvements)
-  - [2.4.4 Updated Modeling with Inheritance - Device Class](#244-updated-modeling-with-inheritance---device-class)
-  - [2.4.5 Updated Modeling with Inheritance - Sensor Class](#245-updated-modeling-with-inheritance---sensor-class)
-  - [2.4.6 Updated Modeling with Inheritance - Actuator Class](#246-updated-modeling-with-inheritance---actuator-class)
-  - [2.4.7 From Sensor Abstraction to TemperatureSensor & HumiditySensor](#247-from-sensor-abstraction-to-temperaturesensor--humiditysensor)
-  - [2.4.8 From Actuator Abstraction to SmartLight](#248-from-actuator-abstraction-to-smartlight)
-  - [2.4.9 Final Overall Design and Modeling with Inheritance](#249-final-overall-design-and-modeling-with-inheritance)
-- [2.5 Smart Home and Data Manager](#25-smart-home-and-data-manager)
-- [2.6 Implementing the Smart Home Class and its Behaviors](#26-implementing-the-smart-home-class-and-its-behaviors)
-- [2.7 Design Patterns](#27-design-patterns)
-  - [2.7.1 What Are Design Patterns?](#271-what-are-design-patterns)
-  - [2.7.2 Classification: Creational, Structural, Behavioral](#272-classification-creational-structural-behavioral)
-  - [2.7.3 The Delegation Principle in Our Smart Home Example](#273-the-delegation-principle-in-our-smart-home-example)
-  - [2.7.4 Singleton Pattern](#274-singleton-pattern)
-  - [2.7.5 Factory Pattern](#275-factory-pattern)
-  - [2.7.6 Observer Pattern](#276-observer-pattern)
+- [1 Object Oriented Programming (OOP) Introduction](#1-object-oriented-programming-oop-introduction)
+  - [1.1 What Is Object-Oriented Programming ?](#11-what-is-object-oriented-programming-)
+  - [1.2 How Was Object-Oriented Programming Born?](#12-how-was-object-oriented-programming-born)
+  - [1.3 OOP Among Programming Paradigms](#13-oop-among-programming-paradigms)
+  - [1.4 Procedural Programming vs. Object-Oriented Programming](#14-procedural-programming-vs-object-oriented-programming)
+    - [1.4.1 Example: Procedural vs. Object-Oriented Approach](#141-example-procedural-vs-object-oriented-approach)
+    - [1.4.2 Key Points](#142-key-points)
+  - [1.5 Limitation of "Simple" Data Structures](#15-limitation-of-simple-data-structures)
+  - [1.6 Classes, Objects and Interfaces](#16-classes-objects-and-interfaces)
+  - [1.7 The Four Pillars of Object-Oriented Programming](#17-the-four-pillars-of-object-oriented-programming)
+- [2 OOP & Python](#2-oop--python)
+  - [2.1 Defining a Class in Python](#21-defining-a-class-in-python)
+  - [2.2 The Constructor and Object Creation](#22-the-constructor-and-object-creation)
+    - [2.2.1 The `__init__()` Method](#221-the-__init__-method)
+    - [2.2.2 Creating an Instance of a Class](#222-creating-an-instance-of-a-class)
+    - [2.2.3 Multiple Instances of the Same Class](#223-multiple-instances-of-the-same-class)
+    - [2.2.4 Understanding `self`](#224-understanding-self)
+  - [2.3 Instance Attributes](#23-instance-attributes)
+    - [2.3.1 Adding Attributes to the `__init__()` Method](#231-adding-attributes-to-the-__init__-method)
+    - [2.3.2 Creating Instances with Attributes](#232-creating-instances-with-attributes)
+    - [2.3.3 Instances Without Parameters](#233-instances-without-parameters)
+    - [2.3.4 Access Instance Attributes](#234-access-instance-attributes)
+    - [2.3.5 Change Instance Attributes](#235-change-instance-attributes)
+  - [2.4 Instance Methods and Dunder Methods](#24-instance-methods-and-dunder-methods)
+    - [2.4.1 Classes & Instance Methods](#241-classes--instance-methods)
+    - [2.4.2 Pythonic Class Print Method](#242-pythonic-class-print-method)
+    - [2.4.3 Pythonic Dunder Methods](#243-pythonic-dunder-methods)
+    - [2.4.4 Object Creation Internals: `__new__()` and `__init__()`](#244-object-creation-internals-__new__-and-__init__)
+    - [2.4.5 The Class Destructor `__del__()`](#245-the-class-destructor-__del__)
+  - [2.5 Class Attributes, Class Methods, and Static Methods](#25-class-attributes-class-methods-and-static-methods)
+    - [2.5.1 Class Attributes](#251-class-attributes)
+    - [2.5.2 Class Methods](#252-class-methods)
+    - [2.5.3 Static Methods](#253-static-methods)
+  - [2.6 Encapsulation and Access Control](#26-encapsulation-and-access-control)
+    - [2.6.1 Access Modifiers in Python](#261-access-modifiers-in-python)
+    - [2.6.2 Getters and Setters](#262-getters-and-setters)
+    - [2.6.3 The Pythonic Way: `@property`, `.setter`, and `.deleter`](#263-the-pythonic-way-property-setter-and-deleter)
+  - [2.7 Inheritance](#27-inheritance)
+    - [2.7.1 Class Inheritance](#271-class-inheritance)
+    - [2.7.2 Method Overriding](#272-method-overriding)
+    - [2.7.3 Multilevel and Multiple Inheritance](#273-multilevel-and-multiple-inheritance)
+    - [2.7.4 Method Resolution Order (MRO)](#274-method-resolution-order-mro)
+  - [2.8 Polymorphism](#28-polymorphism)
+    - [2.8.1 Duck Typing](#281-duck-typing)
+    - [2.8.2 Operator Polymorphism](#282-operator-polymorphism)
+    - [2.8.3 Class-Based Polymorphism](#283-class-based-polymorphism)
+    - [2.8.4 Polymorphism via Method Overriding](#284-polymorphism-via-method-overriding)
+    - [2.8.5 Method Overloading vs. Method Overriding](#285-method-overloading-vs-method-overriding)
+  - [2.9 Abstraction](#29-abstraction)
+    - [2.9.1 Informal Interfaces](#291-informal-interfaces)
+    - [2.9.2 Formal Abstraction with `abc`](#292-formal-abstraction-with-abc)
+  - [2.10 Classes & Comments](#210-classes--comments)
+- [3 Exception Management](#3-exception-management)
+  - [3.1 Exception Management in Python](#31-exception-management-in-python)
+  - [3.2 Else & Finally](#32-else--finally)
+  - [3.3 Custom Exceptions](#33-custom-exceptions)
+- [4 Object Oriented Programming Smart Home Example (in Python)](#4-object-oriented-programming-smart-home-example-in-python)
+  - [4.1 Which are the Entities in the Project ?](#41-which-are-the-entities-in-the-project-)
+  - [4.2 Sensors & Actuators Characteristics](#42-sensors--actuators-characteristics)
+  - [4.3 Open "Issues" and Model Improvements](#43-open-issues-and-model-improvements)
+  - [4.4 Updated Modeling with Inheritance - Device Class](#44-updated-modeling-with-inheritance---device-class)
+  - [4.5 Updated Modeling with Inheritance - Sensor Class](#45-updated-modeling-with-inheritance---sensor-class)
+  - [4.6 Updated Modeling with Inheritance - Actuator Class](#46-updated-modeling-with-inheritance---actuator-class)
+  - [4.7 From Sensor Abstraction to TemperatureSensor & HumiditySensor](#47-from-sensor-abstraction-to-temperaturesensor--humiditysensor)
+  - [4.8 From Actuator Abstraction to SmartLight](#48-from-actuator-abstraction-to-smartlight)
+  - [4.9 Final Overall Design and Modeling with Inheritance](#49-final-overall-design-and-modeling-with-inheritance)
+- [5 Smart Home and Data Manager](#5-smart-home-and-data-manager)
+- [6 Implementing the Smart Home Class and its Behaviors](#6-implementing-the-smart-home-class-and-its-behaviors)
+- [7 Design Patterns](#7-design-patterns)
+  - [7.1 What Are Design Patterns?](#71-what-are-design-patterns)
+  - [7.2 Classification: Creational, Structural, Behavioral](#72-classification-creational-structural-behavioral)
+  - [7.3 The Delegation Principle in Our Smart Home Example](#73-the-delegation-principle-in-our-smart-home-example)
+  - [7.4 Singleton Pattern](#74-singleton-pattern)
+  - [7.5 Factory Pattern](#75-factory-pattern)
+  - [7.6 Observer Pattern](#76-observer-pattern)
 
-# 2.1 Object Oriented Programming (OOP) Introduction
+# 1 Object Oriented Programming (OOP) Introduction
 
-## 2.1.1 What Is Object-Oriented Programming ?
+## 1.1 What Is Object-Oriented Programming ?
 
 **Object-Oriented Programming (OOP)** is a powerful programming paradigm that organizes software design around data, or **objects**, rather than functions and logic. OOP enables developers to model real-world entities and their interactions, making code more modular, reusable, and easier to maintain. 
 
@@ -132,7 +132,7 @@
 
 ---
 
-## 2.1.2 How Was Object-Oriented Programming Born?
+## 1.2 How Was Object-Oriented Programming Born?
 
 Object-oriented programming did not appear all at once: it emerged gradually, starting in the 1960s and 1970s.
 
@@ -146,7 +146,7 @@ The underlying motivation has always been the same: bring software closer to how
 
 ---
 
-## 2.1.3 OOP Among Programming Paradigms
+## 1.3 OOP Among Programming Paradigms
 
 Object-Oriented Programming is **one paradigm among several**. A paradigm is simply a general *style* of writing code — a way of thinking about a problem before turning it into instructions. Different paradigms make different kinds of problems easier to think about, which is why more than one exists.
 
@@ -166,7 +166,7 @@ Object-Oriented Programming is **one paradigm among several**. A paradigm is sim
 
 ---
 
-## 2.1.4 Procedural Programming vs. Object-Oriented Programming
+## 1.4 Procedural Programming vs. Object-Oriented Programming
 
 Object-oriented programming (OOP) is a programming paradigm that models both tangible real-world entities (like cars, sensors, or users) and abstract relationships (such as companies and employees, or students and teachers) as **software objects**. Each object encapsulates both **data** (attributes) and **behavior** (methods), allowing you to represent complex systems in a modular and intuitive way.
 
@@ -174,7 +174,7 @@ In contrast, **procedural programming** organizes code as a sequence of instruct
 
 ---
 
-### 2.1.4.1 Example: Procedural vs. Object-Oriented Approach
+### 1.4.1 Example: Procedural vs. Object-Oriented Approach
 
 **Procedural Programming Example:**
 
@@ -209,7 +209,7 @@ my_car.start()
 
 ---
 
-### 2.1.4.2 Key Points
+### 1.4.2 Key Points
 
 - **OOP models both data and behavior together** in objects, making code more modular and easier to maintain.
 - **Procedural programming** separates data and functions, which can lead to less organized code as complexity increases.
@@ -228,7 +228,7 @@ By adopting OOP, you can build software that is more robust, flexible, and align
 
 ---
 
-## 2.1.5 Limitation of "Simple" Data Structures
+## 1.5 Limitation of "Simple" Data Structures
 
 Traditional data types and data structures in Python—such as **numbers**, **strings**, and **lists**—are well-suited for representing simple pieces of information. For example, you might use a number to store the cost of an apple, a string for the name of a poem, or a list for your favorite colors.
 
@@ -260,11 +260,11 @@ While this method works for small examples, it introduces several **limitations*
 
 ---
 
-## 2.1.6 Classes, Objects and Interfaces
+## 1.6 Classes, Objects and Interfaces
 
 ![](images/car_class_objects_example.png)
 
-**Figure 2.1:** Simple representation of the relationship between Classes and Objects (Instances) for a `Car`.
+**Figure 1:** Simple representation of the relationship between Classes and Objects (Instances) for a `Car`.
 
 **Classes** are fundamental building blocks in object-oriented programming. A **class** serves as a **blueprint** or **template** for creating user-defined data structures. It defines the **attributes** (data) and **methods** (behaviors) that characterize a particular type of object, but it does **not** hold any actual data itself.
 
@@ -297,20 +297,20 @@ For example, if `Car` is the class, then `my_car = Car("Audi", "A4")` creates an
 >
 > Languages like **Java** and **C#** have a dedicated `interface` keyword: a class explicitly declares `class Car implements Drivable`, and the **compiler** checks, before the program ever runs, that `Car` provides every method `Drivable` requires — if one is missing, the code simply does not compile. This is a strong, **compile-time guarantee**. It also lets a class honor several contracts at once even in a language that only allows inheriting from one parent class: in Java, a class can `implements` many interfaces while `extends` only one class.
 >
-> Python has **no such keyword, and no compiler check of this kind**: Python is dynamically typed, so nothing inspects a class before the program runs. Instead, Python relies on **duck typing** ("if it walks like a duck and quacks like a duck, it's a duck" — Section 2.2.8.1): any object that happens to have the right method can be used, regardless of which class it comes from or what it "declares" itself to be. If a method turns out to be missing, Python only tells you when that method is actually called, by raising an `AttributeError` — never in advance.
+> Python has **no such keyword, and no compiler check of this kind**: Python is dynamically typed, so nothing inspects a class before the program runs. Instead, Python relies on **duck typing** ("if it walks like a duck and quacks like a duck, it's a duck" — Section 2.8.1): any object that happens to have the right method can be used, regardless of which class it comes from or what it "declares" itself to be. If a method turns out to be missing, Python only tells you when that method is actually called, by raising an `AttributeError` — never in advance.
 >
 > Python offers three increasingly stronger ways to approximate an interface, all covered later in this lecture:
-> 1. **Plain duck typing** — no explicit contract at all, just objects that happen to share a method name (Section 2.2.8.1 / 2.2.8.3).
-> 2. **Informal interfaces** — a base class with placeholder methods that raise `NotImplementedError`, documenting the intended contract, but still only checked the moment a method is actually called (Section 2.2.9.1).
-> 3. **`abc.ABC` + `@abstractmethod`** — the closest thing Python has to a real interface: it refuses to create an instance of an incomplete subclass at all (Section 2.2.9.2). This check still only happens once the program is running, never before — Python has no compile-time step where it could happen earlier.
+> 1. **Plain duck typing** — no explicit contract at all, just objects that happen to share a method name (Section 2.8.1 / 2.8.3).
+> 2. **Informal interfaces** — a base class with placeholder methods that raise `NotImplementedError`, documenting the intended contract, but still only checked the moment a method is actually called (Section 2.9.1).
+> 3. **`abc.ABC` + `@abstractmethod`** — the closest thing Python has to a real interface: it refuses to create an instance of an incomplete subclass at all (Section 2.9.2). This check still only happens once the program is running, never before — Python has no compile-time step where it could happen earlier.
 >
-> The underlying trade-off: languages with real interfaces catch a missing method **before the program ever runs**; Python catches it later, sometimes only when that exact line of code executes, in exchange for a lighter, more flexible style of OOP — the same "great experiment in freedom" already mentioned for access modifiers (Section 2.2.6.1).
+> The underlying trade-off: languages with real interfaces catch a missing method **before the program ever runs**; Python catches it later, sometimes only when that exact line of code executes, in exchange for a lighter, more flexible style of OOP — the same "great experiment in freedom" already mentioned for access modifiers (Section 2.6.1).
 
 ---
 
-## 2.1.7 The Four Pillars of Object-Oriented Programming
+## 1.7 The Four Pillars of Object-Oriented Programming
 
-Independently of any specific language, the OOP paradigm rests on **four pillars**. They were already mentioned briefly in Section 2.1.1; here, each one gets its own language-agnostic definition and example, before Python's specific tools for realizing them are covered later in this lecture.
+Independently of any specific language, the OOP paradigm rests on **four pillars**. They were already mentioned briefly in Section 1.1; here, each one gets its own language-agnostic definition and example, before Python's specific tools for realizing them are covered later in this lecture.
 
 - **Encapsulation**
   - Bundles data and the methods that operate on it inside a single unit (the object), and controls access to that data through **visibility modifiers** (e.g., `public`, `private`, `protected`).
@@ -331,15 +331,15 @@ Independently of any specific language, the OOP paradigm rests on **four pillars
 - **Maintainability** — encapsulating state reduces the risk of side effects and unintended behavior.
 - **Extensibility** — behavior can be refined over time, either by extending higher-level classes or by overriding specific methods.
 
-> Each pillar has a dedicated, Python-specific section later in this lecture: Encapsulation (Section 2.2.6), Inheritance (Section 2.2.7), Polymorphism (Section 2.2.8), and Abstraction (Section 2.2.9).
+> Each pillar has a dedicated, Python-specific section later in this lecture: Encapsulation (Section 2.6), Inheritance (Section 2.7), Polymorphism (Section 2.8), and Abstraction (Section 2.9).
 
 ---
 
-# 2.2 OOP & Python
+# 2 OOP & Python
 
-Having covered the generic, language-agnostic OOP theory in Section 2.1, this section brings every one of those concepts down to Python: class syntax, object construction, attributes, instance/class/static methods, and each of the four pillars (Encapsulation, Inheritance, Polymorphism, Abstraction) implemented with concrete Python code.
+Having covered the generic, language-agnostic OOP theory in Section 1, this section brings every one of those concepts down to Python: class syntax, object construction, attributes, instance/class/static methods, and each of the four pillars (Encapsulation, Inheritance, Polymorphism, Abstraction) implemented with concrete Python code.
 
-## 2.2.1 Defining a Class in Python
+## 2.1 Defining a Class in Python
 
 All **class definitions** in Python begin with the `class` keyword, followed by the **class name** (written in **CapitalizedWords** notation by convention) and a colon. Any code that is **indented** beneath the class definition becomes part of the class body.
 
@@ -358,11 +358,11 @@ class Car:
 
 ---
 
-## 2.2.2 The Constructor and Object Creation
+## 2.2 The Constructor and Object Creation
 
 Now that the `class` syntax is in place, this section covers how Python constructs and initializes new objects: the `__init__()` method, how instances are created, what happens when multiple instances exist, and the role of `self`.
 
-### 2.2.2.1 The `__init__()` Method
+### 2.2.1 The `__init__()` Method
 
 The `Car` class isn't very useful yet because it doesn't define any properties or behaviors. To make it more meaningful, we can add **attributes** such as `manufacturer` and `model` (keeping it simple for now).
 
@@ -386,7 +386,7 @@ class Car:
 
 ---
 
-### 2.2.2.2 Creating an Instance of a Class
+### 2.2.2 Creating an Instance of a Class
 
 To create an instance of a class, you simply call the class as if it were a function. This invokes the `__init__()` method and creates a new object.
 
@@ -399,7 +399,7 @@ The `__init__()` method is called automatically when the instance is created.
 
 ---
 
-### 2.2.2.3 Multiple Instances of the Same Class
+### 2.2.3 Multiple Instances of the Same Class
 
 Let's see what happens when you create **multiple instances** of the same class:
 
@@ -438,7 +438,7 @@ This demonstrates that **classes are blueprints**, and each time you instantiate
 
 ---
 
-### 2.2.2.4 Understanding `self`
+### 2.2.4 Understanding `self`
 
 In Python, `self` is a conventional name used to refer to the instance of the class within its methods. It acts as a reference to the current object, allowing you to access its attributes and methods. 
 
@@ -460,11 +460,11 @@ my_car = Car("Toyota", "Corolla")  # 'my_car' is passed as 'self' to __init__()
 
 ---
 
-## 2.2.3 Instance Attributes
+## 2.3 Instance Attributes
 
-Building on the constructor mechanics from Section 2.2.2, this section covers how attributes are added, populated, read, and updated on individual instances.
+Building on the constructor mechanics from Section 2.2, this section covers how attributes are added, populated, read, and updated on individual instances.
 
-### 2.2.3.1 Adding Attributes to the `__init__()` Method
+### 2.3.1 Adding Attributes to the `__init__()` Method
 
 The `__init__()` method in a Python class acts as a constructor and is designed to initialize the attributes of each new object (instance) you create. By defining **parameters** in the `__init__()` method, you can **require that specific information be provided when an object is instantiated**. 
 
@@ -491,7 +491,7 @@ class Car:
 
 ---
 
-### 2.2.3.2 Creating Instances with Attributes
+### 2.3.2 Creating Instances with Attributes
 
 Now that we have defined the `Car` class with attributes, let's create instances of this class with specific values for `manufacturer` and `model`:
 
@@ -518,7 +518,7 @@ Honda Civic
 
 ---
 
-### 2.2.3.3 Instances Without Parameters
+### 2.3.3 Instances Without Parameters
 
 In Python, you can create instances of a class without passing any parameters to the constructor. This is possible when the `__init__()` method is defined without any additional parameters (besides `self`). In such cases, the instance will be created with default values or uninitialized attributes. On the other hand, if the `__init__()` method requires parameters, you must provide those arguments when creating an instance.
 
@@ -561,7 +561,7 @@ car_2 = Car("Honda", "Civic")  # Provides specific values
 
 ---
 
-### 2.2.3.4 Access Instance Attributes
+### 2.3.4 Access Instance Attributes
 
 After you create instances of the `Car` class, you can **access their attributes** using **dot notation**. This allows you to retrieve or modify the values stored in each object's attributes.
 
@@ -596,7 +596,7 @@ By organizing data with classes, you ensure that each object has a consistent st
 
 ---
 
-### 2.2.3.5 Change Instance Attributes
+### 2.3.5 Change Instance Attributes
 
 Although instance attributes are **guaranteed to exist** after initialization, their values can be **changed dynamically** at any time. This flexibility allows you to update the state of an object as your program runs.
 
@@ -633,9 +633,9 @@ This ability to modify attributes is a core feature of object-oriented programmi
 
 ---
 
-## 2.2.4 Instance Methods and Dunder Methods
+## 2.4 Instance Methods and Dunder Methods
 
-### 2.2.4.1 Classes & Instance Methods
+### 2.4.1 Classes & Instance Methods
 
 **Instance Methods** are functions defined within a class that operate on individual instances of that class. 
 Like the `__init__()` constructor, the first parameter of every instance method is always `self`, which refers to the specific object the method is called on.
@@ -661,7 +661,7 @@ class Car:
 
 ---
 
-### 2.2.4.2 Pythonic Class Print Method
+### 2.4.2 Pythonic Class Print Method
 
 The `__str__()` method in Python is a special instance method that defines how an object is represented as a string. By default, printing an instance of a class displays its memory address, which is not informative. Implementing the `__str__()` method allows you to customize the string output, making it more meaningful and user-friendly.
 
@@ -684,7 +684,7 @@ def __str__(self):
 
 ---
 
-### 2.2.4.3 Pythonic Dunder Methods
+### 2.4.3 Pythonic Dunder Methods
 
 **Dunder Methods** (short for "double underscore methods") are special methods in Python that begin and end with double underscores, such as `__init__()` and `__str__()`. These methods are also known as **magic methods** or **special methods**. They allow you to customize the behavior of your classes and objects, enabling integration with Python's built-in functions and operators.
 
@@ -703,14 +703,14 @@ For a comprehensive list and detailed documentation, refer to the [Python Data M
 
 ---
 
-### 2.2.4.4 Object Creation Internals: `__new__()` and `__init__()`
+### 2.4.4 Object Creation Internals: `__new__()` and `__init__()`
 
 So far, object creation has been described only through `__init__()`. In reality, Python performs object creation in **two steps**, using two different special methods:
 
 - **`__new__(cls, ...)`**: responsible for **allocating** and **returning** a new (empty) instance of the class. It is called **first**.
-- **`__init__(self, ...)`**: responsible for **initializing** the instance that `__new__()` has just created — this is the constructor already covered in Section 2.2.2.1. It is called **right after** `__new__()`, on the object it returned.
+- **`__init__(self, ...)`**: responsible for **initializing** the instance that `__new__()` has just created — this is the constructor already covered in Section 2.2.1. It is called **right after** `__new__()`, on the object it returned.
 
-In most day-to-day Python code you will only need `__init__()` — `__new__()` uses a sensible default implementation inherited from `object`. Overriding `__new__()` becomes relevant in advanced scenarios, such as controlling how many instances of a class can exist (see the Singleton design pattern in Section 2.7.4) or working with immutable types.
+In most day-to-day Python code you will only need `__init__()` — `__new__()` uses a sensible default implementation inherited from `object`. Overriding `__new__()` becomes relevant in advanced scenarios, such as controlling how many instances of a class can exist (see the Singleton design pattern in Section 7.4) or working with immutable types.
 
 ```python
 class Car:
@@ -741,7 +741,7 @@ Initializing the Car instance
 
 ---
 
-### 2.2.4.5 The Class Destructor `__del__()`
+### 2.4.5 The Class Destructor `__del__()`
 
 Just as objects can be created, they can also be **destroyed**. The **destructor method**, `__del__()`, is called when the garbage collector removes an instance — typically once there are no more references to it, or when the program terminates while the object is still alive.
 
@@ -780,11 +780,11 @@ Audi A4 destroyed!
 
 ---
 
-## 2.2.5 Class Attributes, Class Methods, and Static Methods
+## 2.5 Class Attributes, Class Methods, and Static Methods
 
 Not every attribute or method needs to belong to a single instance. Python also supports attributes and methods that belong to the **class itself**, shared across all its instances — plus methods that belong to a class only for organizational reasons, without touching class or instance state at all.
 
-### 2.2.5.1 Class Attributes
+### 2.5.1 Class Attributes
 
 A **class attribute** is defined directly inside the class body, **outside** of `__init__()`. Unlike instance attributes, a class attribute is **shared** by every instance of the class — more generally, OOP calls these **static variables**.
 
@@ -816,7 +816,7 @@ Class attributes are useful for shared values, shared counters, common configura
 
 ---
 
-### 2.2.5.2 Class Methods
+### 2.5.2 Class Methods
 
 A **class method** operates on the **class itself** rather than on a specific instance. To define one:
 - Replace `self` with **`cls`** as the first parameter, referring to the class.
@@ -877,7 +877,7 @@ print(car.manufacturer, car.model)   # Toyota Corolla
 
 ---
 
-### 2.2.5.3 Static Methods
+### 2.5.3 Static Methods
 
 A **static method**, annotated with `@staticmethod`, does **not** access or modify class or instance state — it has neither `self` nor `cls` among its parameters. It is placed inside a class purely for organizational reasons, because it is logically related to it.
 
@@ -899,7 +899,7 @@ print(Car.is_valid_manufacturer(""))        # False
 
 > [!NOTE] Python Decorators
 >
-> `@classmethod` and `@staticmethod` are examples of **decorators**: a tool that lets you extend or modify the behavior of a function or method without changing its source code. `@property`, covered in Section 2.2.6.3, is another decorator you will use frequently in Python OOP. More information [here](https://www.geeksforgeeks.org/python/decorators-in-python/).
+> `@classmethod` and `@staticmethod` are examples of **decorators**: a tool that lets you extend or modify the behavior of a function or method without changing its source code. `@property`, covered in Section 2.6.3, is another decorator you will use frequently in Python OOP. More information [here](https://www.geeksforgeeks.org/python/decorators-in-python/).
 
 **Let's See How It Works**
 
@@ -943,11 +943,11 @@ Every call to `Car(...)` runs `__init__()`, which increments the **shared** `tot
 
 ---
 
-## 2.2.6 Encapsulation and Access Control
+## 2.6 Encapsulation and Access Control
 
-This section puts the **Encapsulation** pillar introduced generically in Section 2.1.7 into practice in Python.
+This section puts the **Encapsulation** pillar introduced generically in Section 1.7 into practice in Python.
 
-### 2.2.6.1 Access Modifiers in Python
+### 2.6.1 Access Modifiers in Python
 
 Since attributes and methods live inside an object, it becomes possible to **control access** to them. Three levels are commonly used, all supported by convention in Python:
 
@@ -965,7 +965,7 @@ class Car:
 
 > **Important:** in Python, access modifiers are **conventions**, not enforced restrictions. Nothing stops external code from reading or writing `car._model`, or even `car._Car__engine_serial` (the actual, "name-mangled" attribute name Python uses internally for double-underscore attributes). This is different from languages like Java, where the compiler rejects access to a private field from outside its class. Respecting these conventions is left entirely to the developer — one of the reasons Python is sometimes called "a great experiment in freedom."
 
-### 2.2.6.2 Getters and Setters
+### 2.6.2 Getters and Setters
 
 To access a limited-access attribute from outside the class in a controlled way, OOP uses **getters** and **setters**: public methods that read or modify the value of a restricted attribute. In Python, a getter has limited value on its own, but a setter is genuinely useful, since it can **validate** the new value before accepting it.
 
@@ -996,7 +996,7 @@ except ValueError as e:
 
 This approach works, but it changes how attributes are *used*: instead of `car.model`, callers now have to remember to use `car.get_model()`/`car.set_model(...)`. This is exactly the drawback Python's `@property` mechanism is designed to remove.
 
-### 2.2.6.3 The Pythonic Way: `@property`, `.setter`, and `.deleter`
+### 2.6.3 The Pythonic Way: `@property`, `.setter`, and `.deleter`
 
 Python provides the `@property`, `@attribute_name.setter`, and `@attribute_name.deleter` decorators to keep the simple `object.attribute` syntax **while still running validation code behind the scenes**. When code reads `car.model`, Python transparently calls the method annotated with `@property`; when code writes `car.model = value`, Python calls the method annotated with `@model.setter`.
 
@@ -1078,9 +1078,9 @@ Notice that even `__init__()` goes through the setter: `self.license_plate = lic
 
 ---
 
-## 2.2.7 Inheritance
+## 2.7 Inheritance
 
-### 2.2.7.1 Class Inheritance
+### 2.7.1 Class Inheritance
 
 **Inheritance** is a fundamental concept in object-oriented programming that allows one class (the **child class**) to acquire the attributes and methods of another class (the **parent class**). This mechanism promotes **code reuse**, **modularity**, and **extensibility** by enabling you to build new classes based on existing ones.
 
@@ -1101,7 +1101,7 @@ To inspect the type of an object and its relationship to classes, Python provide
   isinstance(car1, Car)
   # Output: True
   ```
-Before writing a child class, it helps to have the full **parent class** in view. Here is `Car`, gathering together the attributes and methods built up across Section 2.2 (`manufacturer`/`model` from 2.2.3, `__str__()` from 2.2.4.2), plus one new method, `estimate_air_pollution()`, that will become useful in a moment:
+Before writing a child class, it helps to have the full **parent class** in view. Here is `Car`, gathering together the attributes and methods built up across Section 2 (`manufacturer`/`model` from 2.3, `__str__()` from 2.4.2), plus one new method, `estimate_air_pollution()`, that will become useful in a moment:
 
 ```python
 class Car:
@@ -1137,7 +1137,7 @@ class ElectricCar(Car):
 **Explanation:**
 - `ElectricCar` inherits all attributes and methods from `Car` using `super()` — including `__str__()` and `estimate_air_pollution()`, even though `ElectricCar` does not mention either of them here.
 - Adds new attributes: `battery_capacity_kwh` and `battery_level`, which `Car` does not have.
-- The next section (2.2.7.2) picks up this exact `Car`/`ElectricCar` pair and shows `ElectricCar` **overriding** `__str__()` and `estimate_air_pollution()` — now that the `Car` versions of both are visible above, it will be clear exactly what is being replaced.
+- The next section (2.7.2) picks up this exact `Car`/`ElectricCar` pair and shows `ElectricCar` **overriding** `__str__()` and `estimate_air_pollution()` — now that the `Car` versions of both are visible above, it will be clear exactly what is being replaced.
 
 **Key Points:**
 - **Inheritance** enables child classes to reuse and extend the functionality of parent classes.
@@ -1149,7 +1149,7 @@ class ElectricCar(Car):
 
 ---
 
-### 2.2.7.2 Method Overriding
+### 2.7.2 Method Overriding
 
 **Method overriding** is a core feature of object-oriented programming that allows a child class to provide a specific implementation for a method that is already defined in its parent class. This enables you to customize or extend the behavior of inherited methods to suit the needs of the child class.
 
@@ -1186,7 +1186,7 @@ class ElectricCar(Car):
 
 **Explanation — what is overridden, and what is new**
 
-Comparing this `ElectricCar` against the `Car` class shown in Section 2.2.7.1 line by line:
+Comparing this `ElectricCar` against the `Car` class shown in Section 2.7.1 line by line:
 
 - `__init__` is **overridden**: `Car.__init__` only sets `manufacturer`/`model`, while `ElectricCar.__init__` also sets `kwh` and `battery_level`. It still calls `super().__init__(manufacturer, model)` first, so the parent's own initialization logic runs unchanged rather than being duplicated.
 - `__str__` is **overridden**: `Car.__str__` returns `"Manufacturer: ... Model: ..."`; `ElectricCar.__str__` calls `super().__str__()` to reuse that exact text, and appends `" - Kwh: ..."` to it.
@@ -1216,7 +1216,7 @@ print(ecar.estimate_air_pollution(100))   # 0   (overridden: a real, meaningful 
 
 ---
 
-### 2.2.7.3 Multilevel and Multiple Inheritance
+### 2.7.3 Multilevel and Multiple Inheritance
 
 Python also supports inheriting from a class that is itself derived from another (**multilevel inheritance**), and inheriting from **more than one** class at the same time (**multiple inheritance**).
 
@@ -1250,7 +1250,7 @@ In multiple inheritance, `SmartElectricCar` acquires the attributes and methods 
 
 ---
 
-### 2.2.7.4 Method Resolution Order (MRO)
+### 2.7.4 Method Resolution Order (MRO)
 
 Every class in Python ultimately derives from the built-in `object` class, the root of every Python object.
 
@@ -1320,11 +1320,11 @@ A
 
 ---
 
-## 2.2.8 Polymorphism
+## 2.8 Polymorphism
 
-This section puts the **Polymorphism** pillar introduced generically in Section 2.1.7 into practice in Python, which offers several different forms of it.
+This section puts the **Polymorphism** pillar introduced generically in Section 1.7 into practice in Python, which offers several different forms of it.
 
-### 2.2.8.1 Duck Typing
+### 2.8.1 Duck Typing
 
 Python's built-in functions already exhibit a form of polymorphism: the same function call behaves appropriately depending on the type of the argument it receives, without any explicit type checking.
 
@@ -1340,7 +1340,7 @@ print(max("a", "z", "m"))   # z
 >
 > If it walks like a duck and quacks like a duck, then it's a duck: Python cares about **what an object can do**, not about its declared type.
 
-### 2.2.8.2 Operator Polymorphism
+### 2.8.2 Operator Polymorphism
 
 Operators like `+` also behave differently depending on the type of their operands:
 
@@ -1350,7 +1350,7 @@ print("Hello " + "World!")   # Hello World!  -> string concatenation
 print([1, 2] + [3, 4])       # [1, 2, 3, 4]  -> list concatenation
 ```
 
-### 2.2.8.3 Class-Based Polymorphism
+### 2.8.3 Class-Based Polymorphism
 
 Two classes that are **not related by inheritance** can implement a method with the same name and signature, and be used interchangeably through that shared method — as long as the caller only relies on the method being present.
 
@@ -1379,13 +1379,13 @@ for v in vehicles:
   print(v.start())
 ```
 
-### 2.2.8.4 Polymorphism via Method Overriding
+### 2.8.4 Polymorphism via Method Overriding
 
-Overriding a method in a subclass, already covered in Section 2.2.7.2 (`ElectricCar` overriding `__str__()` and `estimate_air_pollution()`), is itself a form of polymorphism: the same method call (`car.__str__()`, or simply `print(car)`) produces a different result depending on the actual class of the object it is called on — `Car` or `ElectricCar` — even though both are accessed through the exact same interface.
+Overriding a method in a subclass, already covered in Section 2.7.2 (`ElectricCar` overriding `__str__()` and `estimate_air_pollution()`), is itself a form of polymorphism: the same method call (`car.__str__()`, or simply `print(car)`) produces a different result depending on the actual class of the object it is called on — `Car` or `ElectricCar` — even though both are accessed through the exact same interface.
 
-### 2.2.8.5 Method Overloading vs. Method Overriding
+### 2.8.5 Method Overloading vs. Method Overriding
 
-- **Overriding**: redefining, in a subclass, a method already provided by a parent class, to get more specific behavior (Section 2.2.7.2).
+- **Overriding**: redefining, in a subclass, a method already provided by a parent class, to get more specific behavior (Section 2.7.2).
 - **Overloading**: defining, in the *same* class, several methods with the same name but different parameters, letting the call be resolved based on the arguments passed.
 
 Unlike languages such as Java or C++, **Python does not natively support method overloading** — a later definition simply replaces an earlier one with the same name:
@@ -1422,7 +1422,7 @@ print(add("Hello, ", "World!"))   # Hello, World!
 **Key Points:**
 - Duck typing and operator polymorphism come **for free** from Python's dynamic typing.
 - Class-based polymorphism works across **unrelated classes** that just happen to share a method name.
-- Polymorphism via overriding works **within an inheritance hierarchy** (Section 2.2.7.2).
+- Polymorphism via overriding works **within an inheritance hierarchy** (Section 2.7.2).
 - Python has no native method overloading; `*args`/`**kwargs` or default values are the idiomatic replacements.
 
 **Let's See How It Works**
@@ -1460,11 +1460,11 @@ The `for` loop never checks what type `v` is — it just calls `v.start()` and t
 
 ---
 
-## 2.2.9 Abstraction
+## 2.9 Abstraction
 
-This section puts the **Abstraction** pillar introduced generically in Section 2.1.7 into practice in Python, and formalizes the **Interface** concept introduced in Section 2.1.6.
+This section puts the **Abstraction** pillar introduced generically in Section 1.7 into practice in Python, and formalizes the **Interface** concept introduced in Section 1.6.
 
-### 2.2.9.1 Informal Interfaces
+### 2.9.1 Informal Interfaces
 
 An **informal interface** is a class that declares methods meant to be overridden by subclasses, without Python enforcing that they actually are. A common technique is to give each placeholder method a body that raises `NotImplementedError`, so that forgetting to override it fails loudly rather than silently:
 
@@ -1494,9 +1494,9 @@ vehicle = Vehicle()
 
 Informal interfaces work well for small projects with few developers, since they involve no run-time checking beyond what happens when a missing method is actually *called*: a subclass that forgets to override `start()` will only fail the first time `start()` is invoked, which can make debugging harder as a project grows.
 
-> This is exactly the technique used later in this lecture for the `Sensor.update_value()` and `Actuator.invoke_action()` methods of the Smart Home case study (Section 2.4): both are informal interfaces, using `NotImplementedError` to force every concrete sensor/actuator subclass to provide its own implementation.
+> This is exactly the technique used later in this lecture for the `Sensor.update_value()` and `Actuator.invoke_action()` methods of the Smart Home case study (Section 4): both are informal interfaces, using `NotImplementedError` to force every concrete sensor/actuator subclass to provide its own implementation.
 
-### 2.2.9.2 Formal Abstraction with `abc`
+### 2.9.2 Formal Abstraction with `abc`
 
 Python's `abc` module (Abstract Base Classes) provides a **formal** version of the same idea. A class inheriting from `ABC` and declaring methods with `@abstractmethod` cannot be instantiated directly until every abstract method has been overridden — the check happens **at instantiation time**, not only when the method is eventually called.
 
@@ -1544,7 +1544,7 @@ Compared to informal interfaces, `ABC` provides:
 **Key Points:**
 - Informal interfaces (`NotImplementedError`) rely on discipline and fail only when the placeholder method is actually called.
 - `ABC` + `@abstractmethod` fail immediately, at instantiation time, and make the contract explicit.
-- Both are ways of realizing the generic **Interface** concept from Section 2.1.6 in Python.
+- Both are ways of realizing the generic **Interface** concept from Section 1.6 in Python.
 
 **Let's See How It Works**
 
@@ -1568,11 +1568,11 @@ except TypeError as e:
 Cannot instantiate: Can't instantiate abstract class Motorcycle without an implementation for abstract method 'stop'
 ```
 
-Even though `Motorcycle` did implement `start()`, Python still refuses to create an instance, because `stop()` — inherited as an abstract method from `Vehicle` — was never overridden. This is exactly the safety net informal interfaces (Section 2.2.9.1) do not provide: with `NotImplementedError`, a missing `stop()` would only be discovered the first time something actually called `motorcycle.stop()`, possibly much later and far from where the bug was introduced.
+Even though `Motorcycle` did implement `start()`, Python still refuses to create an instance, because `stop()` — inherited as an abstract method from `Vehicle` — was never overridden. This is exactly the safety net informal interfaces (Section 2.9.1) do not provide: with `NotImplementedError`, a missing `stop()` would only be discovered the first time something actually called `motorcycle.stop()`, possibly much later and far from where the bug was introduced.
 
 ---
 
-## 2.2.10 Classes & Comments
+## 2.10 Classes & Comments
 
 Proper commenting is **essential** for writing clear, maintainable, and professional Python code. Comments help you and others understand the logic, intent, and structure of your programs, making collaboration and future updates much easier.
 
@@ -1635,7 +1635,7 @@ Method docstrings give specific details about the method, explaining its functio
 
 ---
 
-## 2.3 Exception Management
+## 3 Exception Management
 
 Exception management in Python is a crucial aspect of writing robust and reliable programs. It enables developers to **handle errors gracefully**, preventing unexpected crashes and allowing the program to recover or provide meaningful feedback to users. Exception handling is accomplished using **`try`-`except` blocks**, which catch and respond to exceptions that occur during code execution.
 
@@ -1676,7 +1676,7 @@ IndexError: list index out of range
 
 ---
 
-## 2.3.1 Exception Management in Python
+## 3.1 Exception Management in Python
 
 Python uses **exception handling** to manage errors that occur during program execution, allowing your code to respond gracefully rather than crashing. The primary mechanism for this is the `try`-`except` block, which lets you specify code that might raise an exception and define how to handle different error types.
 
@@ -1743,7 +1743,7 @@ except NameError as error:
 - Use **exception variables** (e.g., `except Exception as e`) to print or log detailed error messages.
 - Proper exception handling improves **program reliability** and **user experience**.
 
-## 2.3.2 Else & Finally
+## 3.2 Else & Finally
 
 Python's `try`, `except`, `else`, and `finally` blocks work together to provide flexible error handling and control flow.
 
@@ -1800,7 +1800,7 @@ This always executes.
 
 ---
 
-## 2.3.3 Custom Exceptions
+## 3.3 Custom Exceptions
 
 You can create your own custom exceptions in Python by defining a new class that inherits from the built-in `Exception` class. Custom exceptions are useful when you want to signal specific error conditions in your code that are not covered by standard exceptions.
 
@@ -1847,7 +1847,7 @@ except BatteryLowError as error:
 
 ---
 
-## 2.4 Object Oriented Programming Smart Home Example (in Python)
+## 4 Object Oriented Programming Smart Home Example (in Python)
 
 The objective of this exercise is to **practically apply object-oriented programming (OOP)** principles to model a simplified **IoT system** using Python classes. You will learn how to design and implement software components that represent real-world entities in a **Smart Home** environment.
 
@@ -1879,11 +1879,11 @@ The task is to:
 
 > **Goal:**  Gain hands-on experience with OOP by modelling a Smart Home IoT system, preparing you for more advanced topics in distributed IoT software architecture.
 
-## 2.4.1 Which are the Entities in the Project ? 
+## 4.1 Which are the Entities in the Project ? 
 
 ![](images/smart_home_entities.png)
 
-**Figure 2.2:** Smart Home IoT System Entities that then will be mapped to classes.
+**Figure 2:** Smart Home IoT System Entities that then will be mapped to classes.
 
 When designing a **Smart Home IoT system** using object-oriented programming, it is essential to identify the **key entities**, their **attributes** (data), and **behaviors** (methods) that reflect real-world requirements.
 
@@ -1910,15 +1910,15 @@ This modeling approach mirrors real-world systems, making your code **organized*
 
 ![](images/smart_home_class_specs.png)
 
-**Figure 2.3:** Specifications of the Smart Home Entities with their attributes and behaviors.
+**Figure 3:** Specifications of the Smart Home Entities with their attributes and behaviors.
 
 ---
 
-## 2.4.2 Sensors & Actuators Characteristics
+## 4.2 Sensors & Actuators Characteristics
 
 ![](images/sensor_actuators_specs.png)
 
-**Figure 2.4:** Specifications of the Sensors & Actuators with their attributes and behaviors.
+**Figure 4:** Specifications of the Sensors & Actuators with their attributes and behaviors.
 
 When modeling **Smart Home IoT devices** using object-oriented programming, it is crucial to identify the **core attributes** and **behaviors** for each entity. 
 This ensures your classes accurately represent real-world devices and support extensibility.
@@ -1962,11 +1962,11 @@ By defining these **attributes** and **methods** in your classes, you achieve **
 
 ---
 
-## 2.4.3 Open "Issues" and Model Improvements
+## 4.3 Open "Issues" and Model Improvements
 
 ![](images/sensor_replicated_fields_methods.png)
 
-**Figure 2.5:** Sensors design issues due to replicated fields and methods.
+**Figure 5:** Sensors design issues due to replicated fields and methods.
 
 When designing the **Temperature Sensor** and **Humidity Sensor** classes, you'll notice that they share **many common attributes**—such as `id`, `type`, `manufacturer`, `last_measurement_timestamp`, and `last_measurement_value`. They also both implement a **method** for updating their current sensor value (e.g., `update_value()`).
 
@@ -1984,7 +1984,7 @@ For example, both `TemperatureSensor` and `HumiditySensor` can inherit from a `S
 
 ![](images/actuators_replicated_fields_methods.pdf)
 
-**Figure 2.6:** Actuators design issues due to replicated fields and methods.
+**Figure 6:** Actuators design issues due to replicated fields and methods.
 
 Although the **Smart Light** class is an **actuator** and not a sensor, it shares several **common attributes** with the **Temperature Sensor** and **Humidity Sensor** classes—such as `id`, `type`, and `manufacturer`. The main difference lies in their **behavior**: sensors use an `update_value()` method to record measurements, while actuators like Smart Light use a method such as `change_status()` to perform actions (e.g., turning on or off).
 
@@ -2000,11 +2000,11 @@ Such a design offers several advantages:
 
 ---
 
-## 2.4.4 Updated Modeling with Inheritance - Device Class
+## 4.4 Updated Modeling with Inheritance - Device Class
 
 ![](images/updated_modeling.png)
 
-**Figure 2.7:** Updated Smart Home IoT System Model with Inheritance.
+**Figure 7:** Updated Smart Home IoT System Model with Inheritance.
 
 The `Device` class serves as the **foundation** for modeling all devices in the Smart Home IoT system. It encapsulates the **core attributes**—`id`, `type`, and `manufacturer`—that are **common to every device**, whether it is a **sensor** or an **actuator**. By defining these shared properties in a single **base class**, you achieve **abstraction** and **code reuse**, making your design more **modular** and **extensible**.
 
@@ -2033,7 +2033,7 @@ class Device:
 
 ---
 
-## 2.4.5 Updated Modeling with Inheritance - Sensor Class
+## 4.5 Updated Modeling with Inheritance - Sensor Class
 
 The **Sensor** class serves as a **base class** for all sensor types in the Smart Home IoT system. Its primary purpose is to **define the common structure and expected behavior** for any sensor you implement. By inheriting from the **Device** class, it automatically includes essential attributes such as **id**, **type**, and **manufacturer**.
 
@@ -2048,7 +2048,7 @@ Then the different implementation of the Sensor class can define their own `upda
 For example a TemperatureSensor implemented with a Raspberry Pi could read from a connected temperature sensor, while a HumiditySensor might interface with a different hardware component.
 The abstract `update_value()` method ensures that all sensor types adhere to a common protocol for updating their readings, promoting consistency and reliability across the system.
 
-> **Cross-reference:** this is exactly the **informal interface** technique introduced in Section 2.2.9.1 — `update_value()` is a placeholder that forces every concrete subclass to provide its own implementation, and raises `NotImplementedError` if it is called without being overridden.
+> **Cross-reference:** this is exactly the **informal interface** technique introduced in Section 2.9.1 — `update_value()` is a placeholder that forces every concrete subclass to provide its own implementation, and raises `NotImplementedError` if it is called without being overridden.
 
 **Modeling Rationale:**
 - Promotes **code reuse** and **modularity** by centralizing shared sensor features.
@@ -2087,7 +2087,7 @@ The main characteristics of the above `Sensor` class are:
 
 ---
 
-## 2.4.6 Updated Modeling with Inheritance - Actuator Class
+## 4.6 Updated Modeling with Inheritance - Actuator Class
 
 The **Actuator** class serves as a **base class** for all actuators in the Smart Home IoT system. Its primary purpose is to **define the common structure and expected behavior** for any actuator device you implement. By inheriting from the **Device** class, it automatically includes essential attributes such as **id**, **type**, and **manufacturer**.
 
@@ -2098,7 +2098,7 @@ In addition to these inherited attributes, the Actuator class introduces:
 
 The **invoke_action() method** is deliberately left **empty** (often called an "abstract" or "placeholder" method) in the base class. This design enforces that every actuator subclass (such as SmartLight or SmartLock) must provide its own specific implementation of how actions are invoked. This approach ensures a **consistent interface** for all actuators, while allowing for specialized functionality in each actuator type.
 
-> **Cross-reference:** as with `Sensor.update_value()` above, `invoke_action()` is another **informal interface** (Section 2.2.9.1), enforcing a consistent contract across all actuator types.
+> **Cross-reference:** as with `Sensor.update_value()` above, `invoke_action()` is another **informal interface** (Section 2.9.1), enforcing a consistent contract across all actuator types.
 
 **Modeling Rationale:**
 - Promotes **code reuse** and **modularity** by centralizing shared actuator features.
@@ -2137,7 +2137,7 @@ The main characteristics of the above `Actuator` class are:
 
 ---
 
-## 2.4.7 From Sensor Abstraction to TemperatureSensor & HumiditySensor
+## 4.7 From Sensor Abstraction to TemperatureSensor & HumiditySensor
 
 When modeling **TemperatureSensor** and **HumiditySensor** classes, both are designed to **inherit** from the generic **Sensor** base class. This means they automatically acquire all the **shared attributes** of a Sensor—such as `last_measurement_timestamp` and `last_measurement_value`—as well as the foundational device attributes (`id`, `type`, and `manufacturer`) from the **Device** superclass.
 
@@ -2212,7 +2212,7 @@ class HumiditySensor(Sensor):
 
 ---
 
-## 2.4.8 From Actuator Abstraction to SmartLight
+## 4.8 From Actuator Abstraction to SmartLight
 
 When modeling the **SmartLight** class, it is designed to **inherit** from the generic **Actuator** base class. This means it automatically acquires all the **shared attributes** of an Actuator—such as `last_status_change_timestamp` and `status`—as well as the foundational device attributes (`id`, `type`, and `manufacturer`) from the **Device** superclass.
 
@@ -2254,11 +2254,11 @@ class SmartLight(Actuator):
 
 ---
 
-## 2.4.9 Final Overall Design and Modeling with Inheritance
+## 4.9 Final Overall Design and Modeling with Inheritance
 
 ![](images/overall_updated_modeling_smart_home.png)
 
-**Figure 2.7:** Overall Smart Home IoT System Model with Inheritance.
+**Figure 7:** Overall Smart Home IoT System Model with Inheritance.
 
 The **final design** of the Smart Home IoT system incorporates a well-structured hierarchy of classes that leverage **inheritance** to promote code reuse, modularity, and extensibility. At the top of the hierarchy is the **Device** class, which encapsulates the fundamental attributes shared by all devices in the system, such as `id`, `type`, and `manufacturer`.
 From the Device class, two specialized subclasses are derived: **Sensor** and **Actuator**. The Sensor class adds attributes specific to sensors, including `last_measurement_timestamp` and `last_measurement_value`, along with an abstract method `update_value()` that must be implemented by all sensor types. Similarly, the Actuator class introduces attributes like `last_status_change_timestamp` and `status`, along with an abstract method `invoke_action()` for performing actions on actuators.
@@ -2269,11 +2269,11 @@ This hierarchical structure ensures that all devices in the Smart Home system sh
 
 ---
 
-## 2.5 Smart Home and Data Manager
+## 5 Smart Home and Data Manager
 
 ![](images/data_manager_smart_home.png)
 
-**Figure 2.8:** Adding a Data Manager to the Smart Home IoT System to delegate data management.
+**Figure 8:** Adding a Data Manager to the Smart Home IoT System to delegate data management.
 
 In a well-designed object-oriented system, the **Smart Home** class should focus on representing the home itself—its identity, location, and high-level behaviors—rather than directly managing how device data is stored or retrieved. The responsibility for **data management** (such as storing, updating, and retrieving device information) is best **delegated** to a dedicated class, often called a **Data Manager**.
 
@@ -2287,7 +2287,7 @@ By introducing a **Data Manager** class, you achieve several modeling benefits:
 **Modeling Rationale**:  
 - The **Smart Home** class should be associated with *what* the home is and *how* it is managed at a high level.
 - The **Data Manager** class should be responsible for *how* device data is stored, retrieved, and maintained.
-- This design pattern follows the principle of **delegation**, where specialized classes handle specific responsibilities, resulting in a more robust and maintainable architecture — a first, informal example of what Section 2.7 (Design Patterns) will formalize.
+- This design pattern follows the principle of **delegation**, where specialized classes handle specific responsibilities, resulting in a more robust and maintainable architecture — a first, informal example of what Section 7 (Design Patterns) will formalize.
 
 In summary, delegating device management to a **Data Manager** class allows the Smart Home to remain focused on its core responsibilities, while data handling is abstracted and encapsulated, supporting future scalability and flexibility.
 
@@ -2359,7 +2359,7 @@ The main characteristics of the above `DataManager` class are:
 
 ---
 
-## 2.6 Implementing the Smart Home Class and its Behaviors
+## 6 Implementing the Smart Home Class and its Behaviors
 
 The **Smart Home** class serves as the central entity in the Smart Home IoT system, representing the home itself and managing its associated devices. It encapsulates key attributes such as `home_id`, `latitude`, and `longitude`, which uniquely identify the home and its location.
 Additionally, the Smart Home class maintains a reference to a **Data Manager** instance, which is responsible for handling the storage and retrieval of device data. This delegation allows the Smart Home to focus on high-level operations while the Data Manager manages the specifics of device data.
@@ -2458,9 +2458,9 @@ In this example:
 
 ---
 
-## 2.7 Design Patterns
+## 7 Design Patterns
 
-## 2.7.1 What Are Design Patterns?
+## 7.1 What Are Design Patterns?
 
 **Design patterns** are standard, reusable solutions to problems that recur often in software design. They are not finished code to copy-paste, but **proven design structures**, distilled from decades of shared engineering experience. The term was popularized by the book *"Design Patterns: Elements of Reusable Object-Oriented Software"* (1994), by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides — commonly known as the **"Gang of Four" (GoF)**.
 
@@ -2482,7 +2482,7 @@ In this example:
 
 > Design patterns solve **design** problems, not every problem — using one where it is not needed adds indirection without benefit. As with any tool, judgment matters more than the pattern itself. The best resource for further documentation is [refactoring.guru](https://refactoring.guru/design-patterns).
 
-## 2.7.2 Classification: Creational, Structural, Behavioral
+## 7.2 Classification: Creational, Structural, Behavioral
 
 Classic design patterns are grouped into three broad categories:
 
@@ -2492,16 +2492,16 @@ Classic design patterns are grouped into three broad categories:
 | **Structural** | *How* classes/objects are composed into larger structures | Adapter, Decorator, Facade |
 | **Behavioral** | *How* objects interact and communicate | Observer, Strategy, State |
 
-This lecture covers two Creational patterns (**Singleton**, **Factory**) and one Behavioral pattern (**Observer**) — chosen because all three map naturally onto the Smart Home case study already built in Sections 2.13–2.15.
+This lecture covers two Creational patterns (**Singleton**, **Factory**) and one Behavioral pattern (**Observer**) — chosen because all three map naturally onto the Smart Home case study already built in Sections 4–6.
 
-## 2.7.3 The Delegation Principle in Our Smart Home Example
+## 7.3 The Delegation Principle in Our Smart Home Example
 
-Before introducing new patterns, it is worth naming something already present in this lecture: in Section 2.5, the `SmartHome` class does not manage device storage itself — it **delegates** that responsibility to a `DataManager` instance, as already noted at the time ("*this design pattern follows the principle of delegation*"). **Delegation** — letting a specialized object handle a specific responsibility on behalf of another — is itself a recurring, reusable design idea, and a good first illustration of what a "design pattern" actually is, before looking at three more formal, named ones below.
+Before introducing new patterns, it is worth naming something already present in this lecture: in Section 5, the `SmartHome` class does not manage device storage itself — it **delegates** that responsibility to a `DataManager` instance, as already noted at the time ("*this design pattern follows the principle of delegation*"). **Delegation** — letting a specialized object handle a specific responsibility on behalf of another — is itself a recurring, reusable design idea, and a good first illustration of what a "design pattern" actually is, before looking at three more formal, named ones below.
 
-## 2.7.4 Singleton Pattern
+## 7.4 Singleton Pattern
 
 - **Problem:** how can a program guarantee that only **one instance** of a given class exists, accessible from anywhere?
-- **Solution:** control object creation inside the class itself, overriding `__new__()` (Section 2.2.4.4) to return the same instance on every call.
+- **Solution:** control object creation inside the class itself, overriding `__new__()` (Section 2.4.4) to return the same instance on every call.
 
 Applied to our case study: it would be undesirable for a Smart Home to accidentally end up with two independent `DataManager` instances, each with its own, inconsistent view of the devices.
 
@@ -2559,7 +2559,7 @@ Europe/Rome
 - **Benefit:** any part of the program can call `SmartHomeConfig()` and always reach the same, consistent configuration — no need to pass a config object around everywhere.
 - **Drawback:** that same global, shared state makes the class harder to test in isolation (tests can leak state into one another through `_instance`) and hides the dependency — code using `SmartHomeConfig()` doesn't visibly declare that it depends on shared configuration, the way it would if the config were passed in as a parameter.
 
-## 2.7.5 Factory Pattern
+## 7.5 Factory Pattern
 
 - **Problem:** how can objects be created without the calling code depending on their concrete classes?
 - **Solution:** centralize creation logic inside a dedicated class (the **Factory**), which returns the right concrete instance based on the input it receives.
@@ -2589,7 +2589,7 @@ The client code only ever talks to `DeviceFactory` and to the common `Device`/`S
 
 **Let's See How It Works**
 
-A new `SmartLock` actuator, built following the exact same pattern as `SmartLight` (Section 2.4.8), plugged into `DeviceFactory` with one new branch — the existing branches are untouched:
+A new `SmartLock` actuator, built following the exact same pattern as `SmartLight` (Section 4.8), plugged into `DeviceFactory` with one new branch — the existing branches are untouched:
 
 ```python
 class SmartLock(Actuator):
@@ -2644,7 +2644,7 @@ Rejected: Unknown device type: unknown
 
 The client code (the last five lines) never imports or names `SmartLock` directly — it only ever calls `DeviceFactory.create_device(...)`. That is precisely why adding a whole new device type only meant adding one `elif` branch and one new class, without touching a single line of the `"temperature"`, `"humidity"`, or `"light"` branches, or of any code that already used the factory.
 
-## 2.7.6 Observer Pattern
+## 7.6 Observer Pattern
 
 - **Problem:** how can other parts of a program be notified automatically whenever something changes in one specific place, without tightly coupling the two?
 - **Solution:** a **Subject** keeps a list of **Observers** and calls a common notification method on each of them whenever its state changes.
